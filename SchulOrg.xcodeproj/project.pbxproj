@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		360EA214161F52C30005788D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA213161F52C30005788D /* UIKit.framework */; };
+		360EA216161F52C30005788D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA215161F52C30005788D /* Foundation.framework */; };
+		360EA218161F52C30005788D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA217161F52C30005788D /* CoreGraphics.framework */; };
+		360EA21E161F52C40005788D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 360EA21C161F52C30005788D /* InfoPlist.strings */; };
+		360EA220161F52C40005788D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA21F161F52C40005788D /* main.m */; };
+		360EA224161F52C40005788D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA223161F52C40005788D /* AppDelegate.m */; };
+		360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360EA22B161F52C40005788D /* MainStoryboard.storyboard */; };
+		36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36261E0C1620484C00CAC0FB /* HomescreenViewController.m */; };
+		36A057A21620493B006EF4E4 /* speech_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057A11620493B006EF4E4 /* speech_bubble.png */; };
+		36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057A816204D06006EF4E4 /* ImpressumViewController.m */; };
+		36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AC1620554B006EF4E4 /* Default@2x.png */; };
+		36A057AF16205579006EF4E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AE16205579006EF4E4 /* Default.png */; };
+		36A057B116205588006EF4E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057B016205588006EF4E4 /* Default-568h@2x.png */; };
+		36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057EC16206022006EF4E4 /* NotizenViewController.m */; };
+		36A13A95163360DF00A49393 /* HausaufgabenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A13A94163360DF00A49393 /* HausaufgabenViewController.m */; };
+		36A13A981633664800A49393 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A961633664800A49393 /* EventKit.framework */; };
+		36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A971633664800A49393 /* EventKitUI.framework */; };
+		36A13A9C163366B600A49393 /* TermineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A13A9B163366B600A49393 /* TermineViewController.m */; };
+		36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */; };
+		36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0D161F68CE000EC087 /* StundenplanViewController.m */; };
+		36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E11161F68FF000EC087 /* HelpViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		360EA20F161F52C30005788D /* SchulOrg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchulOrg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		360EA213161F52C30005788D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		360EA215161F52C30005788D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		360EA217161F52C30005788D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		360EA21B161F52C30005788D /* SchulOrg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SchulOrg-Info.plist"; sourceTree = "<group>"; };
+		360EA21D161F52C30005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		360EA21F161F52C40005788D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		360EA221161F52C40005788D /* SchulOrg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SchulOrg-Prefix.pch"; sourceTree = "<group>"; };
+		360EA222161F52C40005788D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		360EA223161F52C40005788D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		360EA225161F52C40005788D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		360EA227161F52C40005788D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		360EA229161F52C40005788D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		360EA22C161F52C40005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		36261E0B1620484C00CAC0FB /* HomescreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomescreenViewController.h; sourceTree = SOURCE_ROOT; };
+		36261E0C1620484C00CAC0FB /* HomescreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomescreenViewController.m; sourceTree = SOURCE_ROOT; };
+		36A057A11620493B006EF4E4 /* speech_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speech_bubble.png; path = "../../../../Downloads/app-bits_free_tabbar_icons/standard/speech_bubble.png"; sourceTree = "<group>"; };
+		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpressumViewController.h; sourceTree = "<group>"; };
+		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImpressumViewController.m; sourceTree = "<group>"; };
+		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		36A057AE16205579006EF4E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		36A057B016205588006EF4E4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		36A057EB16206022006EF4E4 /* NotizenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizenViewController.h; sourceTree = "<group>"; };
+		36A057EC16206022006EF4E4 /* NotizenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizenViewController.m; sourceTree = "<group>"; };
+		36A13A93163360DF00A49393 /* HausaufgabenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HausaufgabenViewController.h; sourceTree = "<group>"; };
+		36A13A94163360DF00A49393 /* HausaufgabenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HausaufgabenViewController.m; sourceTree = "<group>"; };
+		36A13A961633664800A49393 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		36A13A971633664800A49393 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		36A13A9A163366B600A49393 /* TermineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermineViewController.h; sourceTree = "<group>"; };
+		36A13A9B163366B600A49393 /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
+		36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchulkalenderViewController.h; sourceTree = "<group>"; };
+		36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchulkalenderViewController.m; sourceTree = "<group>"; };
+		36E71E0C161F68CE000EC087 /* StundenplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StundenplanViewController.h; sourceTree = "<group>"; };
+		36E71E0D161F68CE000EC087 /* StundenplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StundenplanViewController.m; sourceTree = "<group>"; };
+		36E71E10161F68FF000EC087 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		36E71E11161F68FF000EC087 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		360EA20C161F52C30005788D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A13A981633664800A49393 /* EventKit.framework in Frameworks */,
+				36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */,
+				360EA214161F52C30005788D /* UIKit.framework in Frameworks */,
+				360EA216161F52C30005788D /* Foundation.framework in Frameworks */,
+				360EA218161F52C30005788D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		360EA204161F52C30005788D = {
+			isa = PBXGroup;
+			children = (
+				360EA219161F52C30005788D /* SchulOrg */,
+				360EA212161F52C30005788D /* Frameworks */,
+				360EA210161F52C30005788D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		360EA210161F52C30005788D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				360EA20F161F52C30005788D /* SchulOrg.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		360EA212161F52C30005788D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36A13A961633664800A49393 /* EventKit.framework */,
+				36A13A971633664800A49393 /* EventKitUI.framework */,
+				360EA213161F52C30005788D /* UIKit.framework */,
+				360EA215161F52C30005788D /* Foundation.framework */,
+				360EA217161F52C30005788D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		360EA219161F52C30005788D /* SchulOrg */ = {
+			isa = PBXGroup;
+			children = (
+				360EA222161F52C40005788D /* AppDelegate.h */,
+				360EA223161F52C40005788D /* AppDelegate.m */,
+				360EA22B161F52C40005788D /* MainStoryboard.storyboard */,
+				36261E0E1620485000CAC0FB /* Homescreen */,
+				360EA239161F56D50005788D /* Hausaufgaben */,
+				360EA238161F56C80005788D /* Notizen */,
+				360EA237161F56AF0005788D /* Schulkalender */,
+				360EA236161F56A60005788D /* Stundenplan */,
+				36E71E0F161F68E2000EC087 /* Help */,
+				36A057AB16204D16006EF4E4 /* Impressum */,
+				360EA21A161F52C30005788D /* Supporting Files */,
+			);
+			path = SchulOrg;
+			sourceTree = "<group>";
+		};
+		360EA21A161F52C30005788D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36A057B016205588006EF4E4 /* Default-568h@2x.png */,
+				36A057AE16205579006EF4E4 /* Default.png */,
+				36A057AC1620554B006EF4E4 /* Default@2x.png */,
+				360EA21B161F52C30005788D /* SchulOrg-Info.plist */,
+				360EA21C161F52C30005788D /* InfoPlist.strings */,
+				360EA21F161F52C40005788D /* main.m */,
+				36A057A11620493B006EF4E4 /* speech_bubble.png */,
+				360EA221161F52C40005788D /* SchulOrg-Prefix.pch */,
+				360EA225161F52C40005788D /* Default.png */,
+				360EA227161F52C40005788D /* Default@2x.png */,
+				360EA229161F52C40005788D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		360EA236161F56A60005788D /* Stundenplan */ = {
+			isa = PBXGroup;
+			children = (
+				36E71E0C161F68CE000EC087 /* StundenplanViewController.h */,
+				36E71E0D161F68CE000EC087 /* StundenplanViewController.m */,
+			);
+			name = Stundenplan;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		360EA237161F56AF0005788D /* Schulkalender */ = {
+			isa = PBXGroup;
+			children = (
+				36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */,
+				36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */,
+				36A13A9A163366B600A49393 /* TermineViewController.h */,
+				36A13A9B163366B600A49393 /* TermineViewController.m */,
+			);
+			name = Schulkalender;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		360EA238161F56C80005788D /* Notizen */ = {
+			isa = PBXGroup;
+			children = (
+				36A057EB16206022006EF4E4 /* NotizenViewController.h */,
+				36A057EC16206022006EF4E4 /* NotizenViewController.m */,
+			);
+			name = Notizen;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		360EA239161F56D50005788D /* Hausaufgaben */ = {
+			isa = PBXGroup;
+			children = (
+				36A13A93163360DF00A49393 /* HausaufgabenViewController.h */,
+				36A13A94163360DF00A49393 /* HausaufgabenViewController.m */,
+			);
+			name = Hausaufgaben;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		36261E0E1620485000CAC0FB /* Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				36261E0B1620484C00CAC0FB /* HomescreenViewController.h */,
+				36261E0C1620484C00CAC0FB /* HomescreenViewController.m */,
+			);
+			name = Homescreen;
+			sourceTree = "<group>";
+		};
+		36A057AB16204D16006EF4E4 /* Impressum */ = {
+			isa = PBXGroup;
+			children = (
+				36A057A716204D06006EF4E4 /* ImpressumViewController.h */,
+				36A057A816204D06006EF4E4 /* ImpressumViewController.m */,
+			);
+			name = Impressum;
+			sourceTree = "<group>";
+		};
+		36E71E0F161F68E2000EC087 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				36E71E10161F68FF000EC087 /* HelpViewController.h */,
+				36E71E11161F68FF000EC087 /* HelpViewController.m */,
+			);
+			name = Help;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		360EA20E161F52C30005788D /* SchulOrg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360EA233161F52C40005788D /* Build configuration list for PBXNativeTarget "SchulOrg" */;
+			buildPhases = (
+				360EA20B161F52C30005788D /* Sources */,
+				360EA20C161F52C30005788D /* Frameworks */,
+				360EA20D161F52C30005788D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SchulOrg;
+			productName = SchulOrg;
+			productReference = 360EA20F161F52C30005788D /* SchulOrg.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		360EA206161F52C30005788D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = de.Brosu;
+			};
+			buildConfigurationList = 360EA209161F52C30005788D /* Build configuration list for PBXProject "SchulOrg" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 360EA204161F52C30005788D;
+			productRefGroup = 360EA210161F52C30005788D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				360EA20E161F52C30005788D /* SchulOrg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		360EA20D161F52C30005788D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360EA21E161F52C40005788D /* InfoPlist.strings in Resources */,
+				360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */,
+				36A057A21620493B006EF4E4 /* speech_bubble.png in Resources */,
+				36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */,
+				36A057AF16205579006EF4E4 /* Default.png in Resources */,
+				36A057B116205588006EF4E4 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		360EA20B161F52C30005788D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360EA220161F52C40005788D /* main.m in Sources */,
+				360EA224161F52C40005788D /* AppDelegate.m in Sources */,
+				36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */,
+				36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */,
+				36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */,
+				36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */,
+				36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */,
+				36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */,
+				36A13A95163360DF00A49393 /* HausaufgabenViewController.m in Sources */,
+				36A13A9C163366B600A49393 /* TermineViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		360EA21C161F52C30005788D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360EA21D161F52C30005788D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		360EA22B161F52C40005788D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360EA22C161F52C40005788D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		360EA231161F52C40005788D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		360EA232161F52C40005788D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		360EA234161F52C40005788D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SchulOrg/SchulOrg-Prefix.pch";
+				INFOPLIST_FILE = "SchulOrg/SchulOrg-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		360EA235161F52C40005788D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SchulOrg/SchulOrg-Prefix.pch";
+				INFOPLIST_FILE = "SchulOrg/SchulOrg-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		360EA209161F52C30005788D /* Build configuration list for PBXProject "SchulOrg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360EA231161F52C40005788D /* Debug */,
+				360EA232161F52C40005788D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360EA233161F52C40005788D /* Build configuration list for PBXNativeTarget "SchulOrg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360EA234161F52C40005788D /* Debug */,
+				360EA235161F52C40005788D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 360EA206161F52C30005788D /* Project object */;
+}
