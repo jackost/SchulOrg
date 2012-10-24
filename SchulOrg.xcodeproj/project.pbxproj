@@ -15,6 +15,7 @@
 		360EA224161F52C40005788D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA223161F52C40005788D /* AppDelegate.m */; };
 		360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360EA22B161F52C40005788D /* MainStoryboard.storyboard */; };
 		36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36261E0C1620484C00CAC0FB /* HomescreenViewController.m */; };
+		3654A05C1637D01A00338E9C /* NotizErstellenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */; };
 		36A057A21620493B006EF4E4 /* speech_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057A11620493B006EF4E4 /* speech_bubble.png */; };
 		36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057A816204D06006EF4E4 /* ImpressumViewController.m */; };
 		36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AC1620554B006EF4E4 /* Default@2x.png */; };
@@ -47,6 +48,8 @@
 		360EA22C161F52C40005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		36261E0B1620484C00CAC0FB /* HomescreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomescreenViewController.h; sourceTree = SOURCE_ROOT; };
 		36261E0C1620484C00CAC0FB /* HomescreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomescreenViewController.m; sourceTree = SOURCE_ROOT; };
+		3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizErstellenViewController.h; sourceTree = "<group>"; };
+		3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizErstellenViewController.m; sourceTree = "<group>"; };
 		36A057A11620493B006EF4E4 /* speech_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speech_bubble.png; path = "../../../../Downloads/app-bits_free_tabbar_icons/standard/speech_bubble.png"; sourceTree = "<group>"; };
 		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpressumViewController.h; sourceTree = "<group>"; };
 		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImpressumViewController.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 			children = (
 				36A057EB16206022006EF4E4 /* NotizenViewController.h */,
 				36A057EC16206022006EF4E4 /* NotizenViewController.m */,
+				3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */,
+				3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */,
 			);
 			name = Notizen;
 			path = ..;
@@ -297,6 +302,7 @@
 				36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */,
 				36A13A95163360DF00A49393 /* HausaufgabenViewController.m in Sources */,
 				36A13A9C163366B600A49393 /* TermineViewController.m in Sources */,
+				3654A05C1637D01A00338E9C /* NotizErstellenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

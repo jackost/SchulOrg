@@ -1,20 +1,18 @@
 //
-//  TermineViewController.m
+//  NotizErstellenViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 21.10.12.
+//  Created by Jakob on 24.10.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "TermineViewController.h"
-#import <EventKit/EventKit.h>
-#import <EventKitUI/EventKitUI.h>
+#import "NotizErstellenViewController.h"
 
-@interface TermineViewController ()
+@interface NotizErstellenViewController ()
 
 @end
 
-@implementation TermineViewController
+@implementation NotizErstellenViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,31 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Retun the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
 
 /*
 // Override to support conditional editing of the table view.
@@ -120,21 +94,7 @@
      */
 }
 
-- (IBAction)addButtonPressed:(id)sender {
-    EKEventStore *eventstore = [[EKEventStore alloc]init];
-    EKEventEditViewController *controller = [[EKEventEditViewController alloc]init];
-    controller.eventStore=eventstore;
-    controller.editViewDelegate= self;
-    [self presentModalViewController:controller animated:YES];
-}
-
-- (void)eventEditViewController:(EKEventEditViewController *)controller
-          didCompleteWithAction:(EKEventEditViewAction)action {
-    [self dismissModalViewControllerAnimated:YES];
-
-
-}
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (IBAction)saveNote:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
