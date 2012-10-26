@@ -10,11 +10,12 @@
 
 @class JOTask;
 
-@interface EditTaskViewController : UITableViewController
+@interface EditTaskViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UISwitch *doneSwitch;
+@property (nonatomic, strong) IBOutlet UITextField *contentField;
+
 @property (nonatomic, strong) JOTask *task;
 
--(IBAction)taskDataChanged:(id)sender;
 @end

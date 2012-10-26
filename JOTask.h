@@ -11,7 +11,9 @@
 @interface JOTask : NSObject
 
 @property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSString *content;
 @property (nonatomic, assign)BOOL done;
--(id)initWithName: (NSString *)name done:(BOOL)done;
+
+-(id)initWithName: (NSString *)name Content: (NSString *)content Done:(BOOL)done;
 
 @end

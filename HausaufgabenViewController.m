@@ -67,7 +67,7 @@
         AddTaskViewController *ATViewController = [ATNavcon.viewControllers objectAtIndex:0];
         ATViewController.HausaufgabenViewController=self;
     }
-    else if ([segue.identifier isEqualToString:@"EditDoneTaskSegue"] || [segue.identifier isEqualToString:@"EditNotDoneSegue"]){
+    else if ([segue.identifier isEqualToString:@"EditDoneTaskSegue"] || [segue.identifier isEqualToString:@"EditNotDoneTaskSegue"]){
         
         EditTaskViewController *editTaskViewController = segue.destinationViewController;
         editTaskViewController.task = [self.tasks objectAtIndex:self.tableView.indexPathForSelectedRow.row];

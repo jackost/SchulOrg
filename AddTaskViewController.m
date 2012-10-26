@@ -18,6 +18,7 @@
 
 @synthesize HausaufgabenViewController;
 @synthesize nameField;
+@synthesize contentField;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +38,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    contentField.delegate=self;
+    nameField.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,12 +55,23 @@
 
 
 - (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithName:nameField.text done:NO];
+    JOTask *newTask =[[JOTask alloc]initWithName:nameField.text Content:contentField.text Done:NO];
     [self dismissModalViewControllerAnimated:YES];
     [self.HausaufgabenViewController.tasks addObject:newTask];
 }
 
 -(void)cancelButtonPressed:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == contentField || nameField) {
+        [textField resignFirstResponder];
+    }
+    return NO;
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 @end

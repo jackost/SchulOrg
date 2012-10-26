@@ -10,12 +10,13 @@
 
 @class HausaufgabenViewController;
 
-@interface AddTaskViewController : UITableViewController
+@interface AddTaskViewController : UITableViewController <UITextFieldDelegate>
 
 - (IBAction)doneButtonPressed:(id)sender;
 -(IBAction)cancelButtonPressed:(id)sender;
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
+@property (strong, nonatomic) IBOutlet UITextField *contentField;
 
 @end

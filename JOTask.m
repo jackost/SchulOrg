@@ -11,13 +11,15 @@
 @implementation JOTask
 @synthesize name = _name;
 @synthesize done = _done;
+@synthesize content = _content;
 
--(id)initWithName:(NSString *)name done:(BOOL)done {
+-(id)initWithName:(NSString *)name Content:(NSString *)content Done:(BOOL)done {
     self = [super init];
     
     if (self) {
         self.name=name;
         self.done=done;
+        self.content=content;
     }
     return self;
 }

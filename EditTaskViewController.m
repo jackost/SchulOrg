@@ -15,9 +15,11 @@
 
 @implementation EditTaskViewController
 
-@synthesize nameField = _nameField;
+@synthesize nameField;
 @synthesize task = _task;
 @synthesize doneSwitch = _doneSwitch;
+@synthesize contentField;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,8 +39,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    nameField.delegate=self;
+    contentField.delegate =self;
+    
     self.nameField.text = self.task.name;
+    self.contentField.text = self.task.content;
     [self.doneSwitch setOn:self.task.done];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,8 +57,20 @@
 -(IBAction)taskDataChanged:(id)sender{
     
     self.task.name=self.nameField.text;
+    self.task.content=self.contentField.text;
     self.task.done=self.doneSwitch.isOn;
+
     
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == contentField || nameField) {
+        [textField resignFirstResponder];
+    }
+    return NO;
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end
