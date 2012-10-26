@@ -9,6 +9,7 @@
 #import "HausaufgabenViewController.h"
 #import "JOTask.h"
 #import "AddTaskViewController.h"
+#import "EditTaskViewController.h"
 
 @interface HausaufgabenViewController ()
 
@@ -38,12 +39,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.tasks = [[NSMutableArray alloc]init];
-    JOTask *task =[[JOTask alloc]initWithName:@"TestTask" done:NO];
-    JOTask *doneTask = [[JOTask alloc]initWithName:@"TestTask2" done:YES];
-    [self.tasks addObject:task];
-    [self.tasks addObject:doneTask];
-    
     [self.tableView reloadData];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +66,11 @@
         UINavigationController *ATNavcon = segue.destinationViewController;
         AddTaskViewController *ATViewController = [ATNavcon.viewControllers objectAtIndex:0];
         ATViewController.HausaufgabenViewController=self;
+    }
+    else if ([segue.identifier isEqualToString:@"EditDoneTaskSegue"] || [segue.identifier isEqualToString:@"EditNotDoneSegue"]){
         
+        EditTaskViewController *editTaskViewController = segue.destinationViewController;
+        editTaskViewController.task = [self.tasks objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
 }
 
@@ -103,26 +115,29 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.tasks removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    JOTask *moveTask = [self.tasks objectAtIndex:fromIndexPath.row];
+    [self.tasks removeObjectAtIndex:fromIndexPath.row];
+    [self.tasks insertObject:moveTask atIndex:toIndexPath.row];
 }
-*/
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -144,6 +159,13 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - IBActions
+
+-(void)editButtonPressed:(id)sender{
+    
+    self.editing = !self.editing;
 }
 
 @end

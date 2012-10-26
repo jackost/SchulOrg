@@ -1,23 +1,23 @@
 //
-//  AddTaskViewController.m
+//  EditTaskViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 24.10.12.
+//  Created by Jakob on 26.10.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "AddTaskViewController.h"
-#import "HausaufgabenViewController.h"
+#import "EditTaskViewController.h"
 #import "JOTask.h"
 
-@interface AddTaskViewController ()
- 
+@interface EditTaskViewController ()
+
 @end
 
-@implementation AddTaskViewController
+@implementation EditTaskViewController
 
-@synthesize HausaufgabenViewController;
-@synthesize nameField;
+@synthesize nameField = _nameField;
+@synthesize task = _task;
+@synthesize doneSwitch = _doneSwitch;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +37,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.nameField.text = self.task.name;
+    [self.doneSwitch setOn:self.task.done];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,19 +47,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(IBAction)taskDataChanged:(id)sender{
+    
+    self.task.name=self.nameField.text;
+    self.task.done=self.doneSwitch.isOn;
+    
 }
 
-
-
-- (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithName:nameField.text done:NO];
-    [self dismissModalViewControllerAnimated:YES];
-    [self.HausaufgabenViewController.tasks addObject:newTask];
-}
-
--(void)cancelButtonPressed:(id)sender{
-    [self dismissModalViewControllerAnimated:YES];
-}
 @end

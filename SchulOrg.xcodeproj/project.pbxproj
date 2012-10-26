@@ -26,8 +26,9 @@
 		36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057EC16206022006EF4E4 /* NotizenViewController.m */; };
 		36A13A981633664800A49393 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A961633664800A49393 /* EventKit.framework */; };
 		36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A971633664800A49393 /* EventKitUI.framework */; };
-		36A13A9C163366B600A49393 /* TermineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A13A9B163366B600A49393 /* TermineViewController.m */; };
 		36AE1EE31638570A0034CCC4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */; };
+		36D1A9D01639EBD4000541CF /* TermineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9CF1639EBD4000541CF /* TermineViewController.m */; };
+		36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */; };
 		36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */; };
 		36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0D161F68CE000EC087 /* StundenplanViewController.m */; };
 		36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E11161F68FF000EC087 /* HelpViewController.m */; };
@@ -66,10 +67,12 @@
 		36A057EC16206022006EF4E4 /* NotizenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizenViewController.m; sourceTree = "<group>"; };
 		36A13A961633664800A49393 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		36A13A971633664800A49393 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		36A13A9A163366B600A49393 /* TermineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermineViewController.h; sourceTree = "<group>"; };
-		36A13A9B163366B600A49393 /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
 		36AE1EE11638570A0034CCC4 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		36D1A9CE1639EBD4000541CF /* TermineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermineViewController.h; sourceTree = "<group>"; };
+		36D1A9CF1639EBD4000541CF /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
+		36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 		36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchulkalenderViewController.h; sourceTree = "<group>"; };
 		36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchulkalenderViewController.m; sourceTree = "<group>"; };
 		36E71E0C161F68CE000EC087 /* StundenplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StundenplanViewController.h; sourceTree = "<group>"; };
@@ -172,10 +175,10 @@
 		360EA237161F56AF0005788D /* Schulkalender */ = {
 			isa = PBXGroup;
 			children = (
+				36D1A9CE1639EBD4000541CF /* TermineViewController.h */,
+				36D1A9CF1639EBD4000541CF /* TermineViewController.m */,
 				36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */,
 				36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */,
-				36A13A9A163366B600A49393 /* TermineViewController.h */,
-				36A13A9B163366B600A49393 /* TermineViewController.m */,
 			);
 			name = Schulkalender;
 			path = ..;
@@ -202,6 +205,8 @@
 				362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */,
 				36AE1EE11638570A0034CCC4 /* AddTaskViewController.h */,
 				36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */,
+				36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */,
+				36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */,
 			);
 			name = Hausaufgaben;
 			path = ..;
@@ -310,11 +315,12 @@
 				36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */,
 				36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */,
 				36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */,
-				36A13A9C163366B600A49393 /* TermineViewController.m in Sources */,
 				3654A05C1637D01A00338E9C /* NotizErstellenViewController.m in Sources */,
 				362C8FEE1637FB860029C0AC /* JOTask.m in Sources */,
 				362C8FF21637FFA20029C0AC /* HausaufgabenViewController.m in Sources */,
 				36AE1EE31638570A0034CCC4 /* AddTaskViewController.m in Sources */,
+				36D1A9D01639EBD4000541CF /* TermineViewController.m in Sources */,
+				36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

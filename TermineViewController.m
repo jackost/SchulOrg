@@ -2,13 +2,11 @@
 //  TermineViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 21.10.12.
+//  Created by Jakob on 25.10.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
 #import "TermineViewController.h"
-#import <EventKit/EventKit.h>
-#import <EventKitUI/EventKitUI.h>
 
 @interface TermineViewController ()
 
@@ -47,7 +45,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
-    // Retun the number of sections.
+    // Return the number of sections.
     return 0;
 }
 
@@ -120,21 +118,4 @@
      */
 }
 
-- (IBAction)addButtonPressed:(id)sender {
-    EKEventStore *eventstore = [[EKEventStore alloc]init];
-    EKEventEditViewController *controller = [[EKEventEditViewController alloc]init];
-    controller.eventStore=eventstore;
-    controller.editViewDelegate= self;
-    [self presentModalViewController:controller animated:YES];
-}
-
-- (void)eventEditViewController:(EKEventEditViewController *)controller
-          didCompleteWithAction:(EKEventEditViewAction)action {
-    [self dismissModalViewControllerAnimated:YES];
-
-
-}
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
 @end
