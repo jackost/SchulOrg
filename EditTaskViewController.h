@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @class JOTask;
+@class HausaufgabenViewController;
+@class SubjectViewController;
 
 @interface EditTaskViewController : UITableViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UITextField *nameField;
+
 @property (nonatomic, strong) IBOutlet UISwitch *doneSwitch;
+@property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) IBOutlet UITextField *contentField;
+@property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 
 @property (nonatomic, strong) JOTask *task;
 

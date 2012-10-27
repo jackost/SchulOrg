@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @class HausaufgabenViewController;
+@class SubjectViewController;
 
 @interface AddTaskViewController : UITableViewController <UITextFieldDelegate>
 
 - (IBAction)doneButtonPressed:(id)sender;
 -(IBAction)cancelButtonPressed:(id)sender;
 
-@property (nonatomic, strong) IBOutlet UITextField *nameField;
+@property (nonatomic, assign) int selectedSubject;
+
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
 @property (strong, nonatomic) IBOutlet UITextField *contentField;
+@property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 
 @end

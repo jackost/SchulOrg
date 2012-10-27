@@ -9,6 +9,7 @@
 #import "AddTaskViewController.h"
 #import "HausaufgabenViewController.h"
 #import "JOTask.h"
+#import "SubjectViewController.h"
 
 @interface AddTaskViewController ()
  
@@ -17,8 +18,10 @@
 @implementation AddTaskViewController
 
 @synthesize HausaufgabenViewController;
-@synthesize nameField;
 @synthesize contentField;
+@synthesize subjectField;
+@synthesize deadlineField;
+@synthesize selectedSubject;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,14 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     contentField.delegate=self;
-    nameField.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,10 +48,16 @@
     [super viewDidAppear:animated];
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"SubjectSegue"]) {
+        UINavigationController *SNavcon = segue.destinationViewController;
+        SubjectViewController *SViewController = [SNavcon.viewControllers objectAtIndex:0];
+        SViewController.AddTaskViewController=self;
+    }
+}
 
 - (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithName:nameField.text Content:contentField.text Done:NO];
+    JOTask *newTask =[[JOTask alloc]initWithName:@"" Subject:subjectField.textLabel.text Content:contentField.text Deadline:[NSDate date] Done:NO];
     [self dismissModalViewControllerAnimated:YES];
     [self.HausaufgabenViewController.tasks addObject:newTask];
 }
@@ -65,13 +67,15 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == contentField || nameField) {
+    if (textField == contentField) {
         [textField resignFirstResponder];
     }
     return NO;
 }
 
 - (void)viewDidUnload {
+    [self setSubjectField:nil];
+    [self setDeadlineField:nil];
     [super viewDidUnload];
 }
 @end

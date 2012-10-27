@@ -12,14 +12,18 @@
 @synthesize name = _name;
 @synthesize done = _done;
 @synthesize content = _content;
+@synthesize subject = _subject;
+@synthesize deadline = _deadline;
 
--(id)initWithName:(NSString *)name Content:(NSString *)content Done:(BOOL)done {
+-(id)initWithName:(NSString *)name Subject:(NSString *)subject Content:(NSString *)content Deadline:(NSDate *)deadline Done:(BOOL)done {
     self = [super init];
     
     if (self) {
         self.name=name;
         self.done=done;
         self.content=content;
+        self.subject=subject;
+        self.deadline=deadline;
     }
     return self;
 }
