@@ -10,6 +10,7 @@
 
 @class HausaufgabenViewController;
 @class SubjectViewController;
+@class DeadlineViewController;
 
 @interface AddTaskViewController : UITableViewController <UITextFieldDelegate>
 
@@ -17,10 +18,12 @@
 -(IBAction)cancelButtonPressed:(id)sender;
 
 @property (nonatomic, assign) int selectedSubject;
+@property (nonatomic, strong) NSDate *deadlineDate;
 
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
+@property (nonatomic, strong) DeadlineViewController *DeadlineViewController;
 @property (strong, nonatomic) IBOutlet UITextField *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 

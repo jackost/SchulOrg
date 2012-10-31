@@ -43,6 +43,10 @@
     self.subjectField.textLabel.text=self.task.subject;
     [self.doneSwitch setOn:self.task.done];
     
+    NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
+    [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
+    self.deadlineField.textLabel.text=[date_formater stringFromDate:self.task.deadline];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +60,8 @@
     self.task.content=self.contentField.text;
     self.task.done=self.doneSwitch.isOn;
     self.task.subject=self.subjectField.textLabel.text;
-}
+
+    }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == contentField) {

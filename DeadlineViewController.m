@@ -69,6 +69,9 @@
 
 - (IBAction)doneButtonPressed:(id)sender {
     
+    self.AddTaskViewController.deadlineField.textLabel.text=self.deadlineLabel.text;
+    [self.AddTaskViewController.tableView reloadData];
+    self.AddTaskViewController.deadlineDate=[deadlinePicker date];
     [self dismissModalViewControllerAnimated:YES];
 
 }

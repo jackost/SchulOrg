@@ -10,6 +10,7 @@
 #import "HausaufgabenViewController.h"
 #import "JOTask.h"
 #import "SubjectViewController.h"
+#import "DeadlineViewController.h"
 
 @interface AddTaskViewController ()
  
@@ -18,10 +19,12 @@
 @implementation AddTaskViewController
 
 @synthesize HausaufgabenViewController;
+@synthesize DeadlineViewController;
 @synthesize contentField;
 @synthesize subjectField;
 @synthesize deadlineField;
 @synthesize selectedSubject;
+@synthesize deadlineDate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,12 +57,21 @@
         SubjectViewController *SViewController = [SNavcon.viewControllers objectAtIndex:0];
         SViewController.AddTaskViewController=self;
     }
+    else if ([segue.identifier isEqualToString:@"DeadlineSegue"]) {
+        UINavigationController *DNavcon = segue.destinationViewController;
+        DeadlineViewController *DViewController = [DNavcon.viewControllers objectAtIndex:0];
+        DViewController.AddTaskViewController=self;
+    }
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithName:@"" Subject:subjectField.textLabel.text Content:contentField.text Deadline:[NSDate date] Done:NO];
-    [self dismissModalViewControllerAnimated:YES];
+    JOTask *newTask =[[JOTask alloc]initWithName:@"" Subject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
+    
+    NSLog(@"%@", deadlineDate);
+    
     [self.HausaufgabenViewController.tasks addObject:newTask];
+    [self dismissModalViewControllerAnimated:YES];
+
 }
 
 -(void)cancelButtonPressed:(id)sender{
