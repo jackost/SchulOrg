@@ -1,5 +1,5 @@
 //
-//  HomescreenViewController.h
+//  ImpressumViewController.h
 //  SchulOrg
 //
 //  Created by Jakob on 06.10.12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomescreenViewController : UIViewController
+@interface ImpressumViewController : UIViewController
 
 @end

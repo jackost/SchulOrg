@@ -1,18 +1,18 @@
 //
-//  HelpViewController.m
+//  ImpressumViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 05.10.12.
+//  Created by Jakob on 06.10.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "HelpViewController.h"
+#import "ImpressumViewController.h"
 
-@interface HelpViewController ()
+@interface ImpressumViewController ()
 
 @end
 
-@implementation HelpViewController
+@implementation ImpressumViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,8 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)closeHelpView:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
 @end
