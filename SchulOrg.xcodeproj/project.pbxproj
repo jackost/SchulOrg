@@ -42,12 +42,12 @@
 		360EA213161F52C30005788D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		360EA215161F52C30005788D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		360EA217161F52C30005788D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		360EA21B161F52C30005788D /* SchulOrg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SchulOrg-Info.plist"; sourceTree = "<group>"; };
+		360EA21B161F52C30005788D /* SchulOrg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SchulOrg-Info.plist"; path = "../SchulOrg-Info.plist"; sourceTree = "<group>"; };
 		360EA21D161F52C30005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		360EA21F161F52C40005788D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		360EA221161F52C40005788D /* SchulOrg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SchulOrg-Prefix.pch"; sourceTree = "<group>"; };
-		360EA222161F52C40005788D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		360EA223161F52C40005788D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		360EA21F161F52C40005788D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		360EA221161F52C40005788D /* SchulOrg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SchulOrg-Prefix.pch"; path = "../SchulOrg-Prefix.pch"; sourceTree = "<group>"; };
+		360EA222161F52C40005788D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		360EA223161F52C40005788D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		360EA22C161F52C40005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		361A05B2163C463C00A3A0F9 /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		361A05B3163C463C00A3A0F9 /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
@@ -335,6 +335,7 @@
 				360EA21D161F52C30005788D /* en */,
 			);
 			name = InfoPlist.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		360EA22B161F52C40005788D /* MainStoryboard.storyboard */ = {
@@ -343,6 +344,7 @@
 				360EA22C161F52C40005788D /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,8 +403,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SchulOrg/SchulOrg-Prefix.pch";
-				INFOPLIST_FILE = "SchulOrg/SchulOrg-Info.plist";
+				GCC_PREFIX_HEADER = "SchulOrg-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SchulOrg-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -414,8 +416,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SchulOrg/SchulOrg-Prefix.pch";
-				INFOPLIST_FILE = "SchulOrg/SchulOrg-Info.plist";
+				GCC_PREFIX_HEADER = "SchulOrg-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SchulOrg-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

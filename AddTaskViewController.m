@@ -65,7 +65,7 @@
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithName:@"" Subject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
+    JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
     
     NSLog(@"%@", deadlineDate);
     

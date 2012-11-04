@@ -43,9 +43,18 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"HAView will appear");
     [super viewWillAppear:animated];
     [self.tableView reloadData];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (animated) {
+        NSLog(@"User pressed Back button");
+    }
 }
 
 - (void)didReceiveMemoryWarning

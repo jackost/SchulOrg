@@ -73,10 +73,7 @@
 {
 
     static NSString *CellIdentifier = @"SubjectCell";
-    
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     cell.textLabel.text = [subjects objectAtIndex:indexPath.row];
     
     return cell;
