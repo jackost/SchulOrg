@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JOTask : NSObject
+@interface JOTask : NSObject <NSCoding>
 
 @property (nonatomic, strong)NSString *content;
 @property (nonatomic, assign)BOOL done;

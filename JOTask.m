@@ -26,5 +26,29 @@
     return self;
 }
 
+- (id) initWithCoder: (NSCoder *)coder
+{
+	self = [super init];
+    if (self)
+	{
+		self.content = [coder decodeObjectForKey:@"name"];
+		self.subject = [coder decodeObjectForKey:@"address"];
+		self.deadline = [coder decodeObjectForKey:@"position"];
+        self.done = [coder decodeBoolForKey:@"done"];
+	}
+	
+	return self;
+}
+
+
+- (void) encodeWithCoder: (NSCoder *)coder
+{
+	[coder encodeBool:self.done forKey:@"done"];
+	[coder encodeObject:self.content forKey:@"content"];
+	[coder encodeObject:self.deadline forKey:@"deadline"];
+	[coder encodeObject:self.subject forKey:@"subject"];
+
+}
+
 
 @end
