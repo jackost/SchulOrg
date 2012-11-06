@@ -29,9 +29,6 @@
 {
     [super viewDidLoad];
     
-    self.nameField.delegate=self;
-    self.contentField.delegate=self;
-
     self.nameField.text=self.note.name;
     self.contentField.text=self.note.content;
 

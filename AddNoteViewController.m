@@ -45,6 +45,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.nameField) {
+        [textField resignFirstResponder];
+    }
+    return NO;
+}
+
+
 - (IBAction)donePressed:(id)sender {
     JONote *newNote = [[JONote alloc]initWithName:self.nameField.text Content:self.contentField.text Date:[NSDate date]];
     [self.NotizenViewController.notes addObject:newNote];

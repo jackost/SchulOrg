@@ -16,6 +16,6 @@
 
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
 @property (strong, nonatomic) IBOutlet UITextView *contentField;
-@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UILabel *nameField;
 
 @end

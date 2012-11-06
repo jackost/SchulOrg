@@ -480,20 +480,21 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EOe-bL-boh">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8U-dD-apY">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="260" id="QCy-tw-uay"/>
-                                                        <constraint firstAttribute="height" constant="30" id="rtU-1V-4I9"/>
+                                                        <constraint firstAttribute="height" constant="21" id="NZ1-hG-r0u"/>
+                                                        <constraint firstAttribute="width" constant="260" id="Zlm-tB-1Te"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                                </textField>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="EOe-bL-boh" firstAttribute="centerY" secondItem="yGm-PH-jnw" secondAttribute="centerY" type="default" id="AW4-kD-7uX"/>
-                                            <constraint firstItem="EOe-bL-boh" firstAttribute="centerX" secondItem="yGm-PH-jnw" secondAttribute="centerX" type="default" id="YHB-vM-hQv"/>
+                                            <constraint firstItem="E8U-dD-apY" firstAttribute="centerY" secondItem="yGm-PH-jnw" secondAttribute="centerY" type="default" id="sUr-EL-OX8"/>
+                                            <constraint firstItem="E8U-dD-apY" firstAttribute="centerX" secondItem="yGm-PH-jnw" secondAttribute="centerX" type="default" id="syT-uC-1DA"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -535,7 +536,7 @@
                     <navigationItem key="navigationItem" title="Notiz bearbeiten" id="bO4-bb-Fvh"/>
                     <connections>
                         <outlet property="contentField" destination="9dY-2t-0do" id="iML-z9-T8S"/>
-                        <outlet property="nameField" destination="EOe-bL-boh" id="78l-c8-2HJ"/>
+                        <outlet property="nameField" destination="E8U-dD-apY" id="XNJ-rh-9yr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0y-yp-aB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1270,6 +1271,83 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="-956" y="-424"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddNoteViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddTaskViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTaskViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="doneButtonPressed:"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="DeadlineViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="deadlinePickerChanged:"/>
+                <relationship kind="action" name="doneButtonPressed:"/>
+                <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="EditNoteViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditNoteViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EditTaskViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTaskViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="taskDataChanged:"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="doneSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="HausaufgabenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HausaufgabenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeHelpView:"/>
+            </relationships>
+        </class>
+        <class className="HomescreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomescreenViewController.h"/>
+        </class>
+        <class className="ImpressumViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpressumViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NotizenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotizenViewController.h"/>
+        </class>
+        <class className="StundenplanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StundenplanViewController.h"/>
+        </class>
+        <class className="SubjectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubjectViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

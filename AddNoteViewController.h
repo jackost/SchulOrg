@@ -10,7 +10,7 @@
 
 @class NotizenViewController;
 
-@interface AddNoteViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface AddNoteViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
