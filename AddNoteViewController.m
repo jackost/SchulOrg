@@ -30,7 +30,6 @@
     [super viewDidLoad];
 
     self.nameField.delegate=self;
-    self.contentField.delegate=self;
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -47,10 +46,11 @@
 }
 
 - (IBAction)donePressed:(id)sender {
-    JONote *newNote = [[JONote alloc]initWithName:self.nameField.text Content:self.contentField.text];
+    JONote *newNote = [[JONote alloc]initWithName:self.nameField.text Content:self.contentField.text Date:[NSDate date]];
     [self.NotizenViewController.notes addObject:newNote];
     [self.NotizenViewController.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
+    
     
 }
 

@@ -11,13 +11,14 @@
 @implementation JONote
 
 
--(id)initWithName:(NSString *)name Content:(NSString *)content
+-(id)initWithName:(NSString *)name Content:(NSString *)content Date:(NSDate *)date
 {
     self = [super init];
     
     if (self) {
         self.name=name;
         self.content=content;
+        self.date=date;
     }
     return self;
 }
@@ -31,6 +32,7 @@
 	{
 		self.content = [coder decodeObjectForKey:@"content"];
         self.name = [coder decodeObjectForKey:@"name"];
+        self.date = [coder decodeObjectForKey:@"date"];
 	}
 	
 	return self;
@@ -41,6 +43,7 @@
 {
 	[coder encodeObject:self.content forKey:@"content"];
     [coder encodeObject:self.name forKey:@"name"];
+    [coder encodeObject:self.date forKey:@"date"];
 
 }
 

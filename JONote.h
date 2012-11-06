@@ -13,8 +13,10 @@
 
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSString *content;
+@property (nonatomic, strong)NSDate *date;
 
--(id)initWithName:(NSString *)name Content:(NSString *)content;
+
+-(id)initWithName:(NSString *)name Content:(NSString *)content Date:(NSDate *)date;
 
 
 @end

@@ -74,7 +74,11 @@
     
     // Configure the cell...
     
+    NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
+    [date_formater setDateFormat:@"dd.MM.yyyy"];
+    
     cell.textLabel.text=currentNote.name;
+    cell.detailTextLabel.text=[date_formater stringFromDate:currentNote.date];
     
     return cell;
 }
