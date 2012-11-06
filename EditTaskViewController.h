@@ -13,13 +13,13 @@
 @class SubjectViewController;
 
 @interface EditTaskViewController : UITableViewController <UITextFieldDelegate>
-
+@property (nonatomic, strong) JOTask *task;
 
 @property (nonatomic, strong) IBOutlet UISwitch *doneSwitch;
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) IBOutlet UITextField *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 
-@property (nonatomic, strong) JOTask *task;
+-(IBAction)taskDataChanged:(id)sender;
 
 @end

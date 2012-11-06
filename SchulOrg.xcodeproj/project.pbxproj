@@ -19,7 +19,7 @@
 		362C8FEE1637FB860029C0AC /* JOTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 362C8FED1637FB860029C0AC /* JOTask.m */; };
 		362C8FF21637FFA20029C0AC /* HausaufgabenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */; };
 		3644DC85164171D000A124D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3644DC84164171D000A124D0 /* Default-568h@2x.png */; };
-		3654A05C1637D01A00338E9C /* NotizErstellenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */; };
+		3654A05C1637D01A00338E9C /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3654A05B1637D01A00338E9C /* AddNoteViewController.m */; };
 		36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057A816204D06006EF4E4 /* ImpressumViewController.m */; };
 		36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AC1620554B006EF4E4 /* Default@2x.png */; };
 		36A057AF16205579006EF4E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AE16205579006EF4E4 /* Default.png */; };
@@ -31,6 +31,7 @@
 		36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */; };
 		36DD7291164967B800D2C664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36DD728F164967B800D2C664 /* InfoPlist.strings */; };
 		36DD729C16496C6200D2C664 /* JONote.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD729B16496C6200D2C664 /* JONote.m */; };
+		36DD72C41649832000D2C664 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD72C31649832000D2C664 /* EditNoteViewController.m */; };
 		36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */; };
 		36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0D161F68CE000EC087 /* StundenplanViewController.m */; };
 		36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E11161F68FF000EC087 /* HelpViewController.m */; };
@@ -58,8 +59,8 @@
 		362C8FF01637FFA20029C0AC /* HausaufgabenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HausaufgabenViewController.h; sourceTree = "<group>"; };
 		362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HausaufgabenViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3644DC84164171D000A124D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizErstellenViewController.h; sourceTree = "<group>"; };
-		3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizErstellenViewController.m; sourceTree = "<group>"; };
+		3654A05A1637D01A00338E9C /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		3654A05B1637D01A00338E9C /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
 		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImpressumViewController.h; path = ../ImpressumViewController.h; sourceTree = "<group>"; };
 		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImpressumViewController.m; path = ../ImpressumViewController.m; sourceTree = "<group>"; };
 		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -77,6 +78,8 @@
 		36DD7290164967B800D2C664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36DD729A16496C6200D2C664 /* JONote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONote.h; sourceTree = "<group>"; };
 		36DD729B16496C6200D2C664 /* JONote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONote.m; sourceTree = "<group>"; };
+		36DD72C21649832000D2C664 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
+		36DD72C31649832000D2C664 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchulkalenderViewController.h; sourceTree = "<group>"; };
 		36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchulkalenderViewController.m; sourceTree = "<group>"; };
 		36E71E0C161F68CE000EC087 /* StundenplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StundenplanViewController.h; sourceTree = "<group>"; };
@@ -187,12 +190,14 @@
 		360EA238161F56C80005788D /* Notizen */ = {
 			isa = PBXGroup;
 			children = (
-				36A057EB16206022006EF4E4 /* NotizenViewController.h */,
-				36A057EC16206022006EF4E4 /* NotizenViewController.m */,
-				3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */,
-				3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */,
 				36DD729A16496C6200D2C664 /* JONote.h */,
 				36DD729B16496C6200D2C664 /* JONote.m */,
+				36A057EB16206022006EF4E4 /* NotizenViewController.h */,
+				36A057EC16206022006EF4E4 /* NotizenViewController.m */,
+				3654A05A1637D01A00338E9C /* AddNoteViewController.h */,
+				3654A05B1637D01A00338E9C /* AddNoteViewController.m */,
+				36DD72C21649832000D2C664 /* EditNoteViewController.h */,
+				36DD72C31649832000D2C664 /* EditNoteViewController.m */,
 			);
 			name = Notizen;
 			path = ..;
@@ -205,14 +210,14 @@
 				362C8FED1637FB860029C0AC /* JOTask.m */,
 				362C8FF01637FFA20029C0AC /* HausaufgabenViewController.h */,
 				362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */,
-				36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */,
-				36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */,
 				36AE1EE11638570A0034CCC4 /* AddTaskViewController.h */,
 				36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */,
 				361A05B2163C463C00A3A0F9 /* SubjectViewController.h */,
 				361A05B3163C463C00A3A0F9 /* SubjectViewController.m */,
 				3607D653164096A2008B7378 /* DeadlineViewController.h */,
 				3607D654164096A2008B7378 /* DeadlineViewController.m */,
+				36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */,
+				36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */,
 			);
 			name = Hausaufgaben;
 			path = ..;
@@ -320,7 +325,7 @@
 				36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */,
 				36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */,
 				36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */,
-				3654A05C1637D01A00338E9C /* NotizErstellenViewController.m in Sources */,
+				3654A05C1637D01A00338E9C /* AddNoteViewController.m in Sources */,
 				362C8FEE1637FB860029C0AC /* JOTask.m in Sources */,
 				362C8FF21637FFA20029C0AC /* HausaufgabenViewController.m in Sources */,
 				36AE1EE31638570A0034CCC4 /* AddTaskViewController.m in Sources */,
@@ -329,6 +334,7 @@
 				361A05B4163C463C00A3A0F9 /* SubjectViewController.m in Sources */,
 				3607D655164096A2008B7378 /* DeadlineViewController.m in Sources */,
 				36DD729C16496C6200D2C664 /* JONote.m in Sources */,
+				36DD72C41649832000D2C664 /* EditNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

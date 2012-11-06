@@ -59,7 +59,6 @@
     
     self.task.content=self.contentField.text;
     self.task.done=self.doneSwitch.isOn;
-    self.task.subject=self.subjectField.textLabel.text;
 
     }
 
