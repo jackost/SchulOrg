@@ -9,6 +9,7 @@
 #import "JOTask.h"
 
 @implementation JOTask
+
 @synthesize done = _done;
 @synthesize content = _content;
 @synthesize subject = _subject;
@@ -31,9 +32,9 @@
 	self = [super init];
     if (self)
 	{
-		self.content = [coder decodeObjectForKey:@"name"];
-		self.subject = [coder decodeObjectForKey:@"address"];
-		self.deadline = [coder decodeObjectForKey:@"position"];
+		self.content = [coder decodeObjectForKey:@"content"];
+		self.subject = [coder decodeObjectForKey:@"subject"];
+		self.deadline = [coder decodeObjectForKey:@"deadline"];
         self.done = [coder decodeBoolForKey:@"done"];
 	}
 	

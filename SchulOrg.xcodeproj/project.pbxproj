@@ -11,7 +11,6 @@
 		360EA214161F52C30005788D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA213161F52C30005788D /* UIKit.framework */; };
 		360EA216161F52C30005788D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA215161F52C30005788D /* Foundation.framework */; };
 		360EA218161F52C30005788D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360EA217161F52C30005788D /* CoreGraphics.framework */; };
-		360EA21E161F52C40005788D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 360EA21C161F52C30005788D /* InfoPlist.strings */; };
 		360EA220161F52C40005788D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA21F161F52C40005788D /* main.m */; };
 		360EA224161F52C40005788D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA223161F52C40005788D /* AppDelegate.m */; };
 		360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360EA22B161F52C40005788D /* MainStoryboard.storyboard */; };
@@ -30,6 +29,8 @@
 		36AE1EE31638570A0034CCC4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */; };
 		36D1A9D01639EBD4000541CF /* TermineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9CF1639EBD4000541CF /* TermineViewController.m */; };
 		36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */; };
+		36DD7291164967B800D2C664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36DD728F164967B800D2C664 /* InfoPlist.strings */; };
+		36DD729C16496C6200D2C664 /* JONote.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD729B16496C6200D2C664 /* JONote.m */; };
 		36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */; };
 		36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0D161F68CE000EC087 /* StundenplanViewController.m */; };
 		36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E11161F68FF000EC087 /* HelpViewController.m */; };
@@ -43,7 +44,6 @@
 		360EA215161F52C30005788D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		360EA217161F52C30005788D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		360EA21B161F52C30005788D /* SchulOrg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SchulOrg-Info.plist"; path = "../SchulOrg-Info.plist"; sourceTree = "<group>"; };
-		360EA21D161F52C30005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		360EA21F161F52C40005788D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
 		360EA221161F52C40005788D /* SchulOrg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SchulOrg-Prefix.pch"; path = "../SchulOrg-Prefix.pch"; sourceTree = "<group>"; };
 		360EA222161F52C40005788D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -57,13 +57,13 @@
 		362C8FED1637FB860029C0AC /* JOTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOTask.m; sourceTree = "<group>"; };
 		362C8FF01637FFA20029C0AC /* HausaufgabenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HausaufgabenViewController.h; sourceTree = "<group>"; };
 		362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HausaufgabenViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		3644DC84164171D000A124D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		3644DC84164171D000A124D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizErstellenViewController.h; sourceTree = "<group>"; };
 		3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizErstellenViewController.m; sourceTree = "<group>"; };
 		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImpressumViewController.h; path = ../ImpressumViewController.h; sourceTree = "<group>"; };
 		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImpressumViewController.m; path = ../ImpressumViewController.m; sourceTree = "<group>"; };
-		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		36A057AE16205579006EF4E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		36A057AE16205579006EF4E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		36A057EB16206022006EF4E4 /* NotizenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizenViewController.h; sourceTree = "<group>"; };
 		36A057EC16206022006EF4E4 /* NotizenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizenViewController.m; sourceTree = "<group>"; };
 		36A13A961633664800A49393 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -74,6 +74,9 @@
 		36D1A9CF1639EBD4000541CF /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
 		36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
 		36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		36DD7290164967B800D2C664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36DD729A16496C6200D2C664 /* JONote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONote.h; sourceTree = "<group>"; };
+		36DD729B16496C6200D2C664 /* JONote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONote.m; sourceTree = "<group>"; };
 		36E71E09161F68C1000EC087 /* SchulkalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchulkalenderViewController.h; sourceTree = "<group>"; };
 		36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchulkalenderViewController.m; sourceTree = "<group>"; };
 		36E71E0C161F68CE000EC087 /* StundenplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StundenplanViewController.h; sourceTree = "<group>"; };
@@ -149,10 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				3644DC84164171D000A124D0 /* Default-568h@2x.png */,
+				36DD728F164967B800D2C664 /* InfoPlist.strings */,
 				36A057AE16205579006EF4E4 /* Default.png */,
 				36A057AC1620554B006EF4E4 /* Default@2x.png */,
 				360EA21B161F52C30005788D /* SchulOrg-Info.plist */,
-				360EA21C161F52C30005788D /* InfoPlist.strings */,
 				360EA21F161F52C40005788D /* main.m */,
 				360EA221161F52C40005788D /* SchulOrg-Prefix.pch */,
 			);
@@ -188,6 +191,8 @@
 				36A057EC16206022006EF4E4 /* NotizenViewController.m */,
 				3654A05A1637D01A00338E9C /* NotizErstellenViewController.h */,
 				3654A05B1637D01A00338E9C /* NotizErstellenViewController.m */,
+				36DD729A16496C6200D2C664 /* JONote.h */,
+				36DD729B16496C6200D2C664 /* JONote.m */,
 			);
 			name = Notizen;
 			path = ..;
@@ -292,11 +297,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360EA21E161F52C40005788D /* InfoPlist.strings in Resources */,
 				360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */,
 				36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */,
 				36A057AF16205579006EF4E4 /* Default.png in Resources */,
 				3644DC85164171D000A124D0 /* Default-568h@2x.png in Resources */,
+				36DD7291164967B800D2C664 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,21 +328,13 @@
 				36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */,
 				361A05B4163C463C00A3A0F9 /* SubjectViewController.m in Sources */,
 				3607D655164096A2008B7378 /* DeadlineViewController.m in Sources */,
+				36DD729C16496C6200D2C664 /* JONote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		360EA21C161F52C30005788D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				360EA21D161F52C30005788D /* en */,
-			);
-			name = InfoPlist.strings;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		360EA22B161F52C40005788D /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +342,14 @@
 			);
 			name = MainStoryboard.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		36DD728F164967B800D2C664 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36DD7290164967B800D2C664 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

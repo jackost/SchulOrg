@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HausaufgabenViewController : UITableViewController
+
 @property (nonatomic, strong) NSMutableArray *tasks;
 
 -(IBAction)editButtonPressed:(id)sender;
