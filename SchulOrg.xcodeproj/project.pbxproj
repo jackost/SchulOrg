@@ -20,9 +20,12 @@
 		362C8FF21637FFA20029C0AC /* HausaufgabenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362C8FF11637FFA20029C0AC /* HausaufgabenViewController.m */; };
 		3644DC85164171D000A124D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3644DC84164171D000A124D0 /* Default-568h@2x.png */; };
 		3654A05C1637D01A00338E9C /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3654A05B1637D01A00338E9C /* AddNoteViewController.m */; };
+		3677EFC6164AD574002DFE83 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFC5164AD574002DFE83 /* Default.png */; };
+		3677EFC8164AD61E002DFE83 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFC7164AD61E002DFE83 /* background.png */; };
+		3677EFD4164AE47D002DFE83 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFD3164AE47D002DFE83 /* Icon.png */; };
+		3677EFD6164AE47F002DFE83 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFD5164AE47F002DFE83 /* Icon@2x.png */; };
 		36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057A816204D06006EF4E4 /* ImpressumViewController.m */; };
 		36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AC1620554B006EF4E4 /* Default@2x.png */; };
-		36A057AF16205579006EF4E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AE16205579006EF4E4 /* Default.png */; };
 		36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057EC16206022006EF4E4 /* NotizenViewController.m */; };
 		36A13A981633664800A49393 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A961633664800A49393 /* EventKit.framework */; };
 		36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A971633664800A49393 /* EventKitUI.framework */; };
@@ -49,7 +52,6 @@
 		360EA221161F52C40005788D /* SchulOrg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SchulOrg-Prefix.pch"; path = "../SchulOrg-Prefix.pch"; sourceTree = "<group>"; };
 		360EA222161F52C40005788D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		360EA223161F52C40005788D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		360EA22C161F52C40005788D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		361A05B2163C463C00A3A0F9 /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		361A05B3163C463C00A3A0F9 /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
 		36261E0B1620484C00CAC0FB /* HomescreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomescreenViewController.h; sourceTree = SOURCE_ROOT; };
@@ -61,10 +63,15 @@
 		3644DC84164171D000A124D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3654A05A1637D01A00338E9C /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
 		3654A05B1637D01A00338E9C /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		3677EFC5164AD574002DFE83 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3677EFC7164AD61E002DFE83 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = SchulOrg/background.png; sourceTree = SOURCE_ROOT; };
+		3677EFD0164ADCB5002DFE83 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3677EFD2164ADD20002DFE83 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3677EFD3164AE47D002DFE83 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3677EFD5164AE47F002DFE83 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImpressumViewController.h; path = ../ImpressumViewController.h; sourceTree = "<group>"; };
 		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImpressumViewController.m; path = ../ImpressumViewController.m; sourceTree = "<group>"; };
 		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		36A057AE16205579006EF4E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		36A057EB16206022006EF4E4 /* NotizenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotizenViewController.h; sourceTree = "<group>"; };
 		36A057EC16206022006EF4E4 /* NotizenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotizenViewController.m; sourceTree = "<group>"; };
 		36A13A961633664800A49393 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -75,7 +82,6 @@
 		36D1A9CF1639EBD4000541CF /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
 		36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
 		36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
-		36DD7290164967B800D2C664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36DD729A16496C6200D2C664 /* JONote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONote.h; sourceTree = "<group>"; };
 		36DD729B16496C6200D2C664 /* JONote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONote.m; sourceTree = "<group>"; };
 		36DD72C21649832000D2C664 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
@@ -154,9 +160,12 @@
 		360EA21A161F52C30005788D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3677EFD5164AE47F002DFE83 /* Icon@2x.png */,
+				3677EFD3164AE47D002DFE83 /* Icon.png */,
+				3677EFC7164AD61E002DFE83 /* background.png */,
 				3644DC84164171D000A124D0 /* Default-568h@2x.png */,
+				3677EFC5164AD574002DFE83 /* Default.png */,
 				36DD728F164967B800D2C664 /* InfoPlist.strings */,
-				36A057AE16205579006EF4E4 /* Default.png */,
 				36A057AC1620554B006EF4E4 /* Default@2x.png */,
 				360EA21B161F52C30005788D /* SchulOrg-Info.plist */,
 				360EA21F161F52C40005788D /* main.m */,
@@ -287,6 +296,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 360EA204161F52C30005788D;
 			productRefGroup = 360EA210161F52C30005788D /* Products */;
@@ -305,9 +315,12 @@
 			files = (
 				360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */,
 				36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */,
-				36A057AF16205579006EF4E4 /* Default.png in Resources */,
 				3644DC85164171D000A124D0 /* Default-568h@2x.png in Resources */,
 				36DD7291164967B800D2C664 /* InfoPlist.strings in Resources */,
+				3677EFC6164AD574002DFE83 /* Default.png in Resources */,
+				3677EFC8164AD61E002DFE83 /* background.png in Resources */,
+				3677EFD4164AE47D002DFE83 /* Icon.png in Resources */,
+				3677EFD6164AE47F002DFE83 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +341,6 @@
 			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
-
 
 /* Begin PBXSourcesBuildPhase section */
 		360EA20B161F52C30005788D /* Sources */ = {
@@ -362,7 +374,7 @@
 		360EA22B161F52C40005788D /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				360EA22C161F52C40005788D /* en */,
+				3677EFD0164ADCB5002DFE83 /* de */,
 			);
 			name = MainStoryboard.storyboard;
 			path = ..;
@@ -371,7 +383,7 @@
 		36DD728F164967B800D2C664 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				36DD7290164967B800D2C664 /* en */,
+				3677EFD2164ADD20002DFE83 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

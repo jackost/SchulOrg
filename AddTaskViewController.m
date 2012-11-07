@@ -67,8 +67,6 @@
 - (IBAction)doneButtonPressed:(id)sender {
     JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
     
-    NSLog(@"%@", deadlineDate);
-    
     [self.HausaufgabenViewController.tasks addObject:newTask];
     [self dismissModalViewControllerAnimated:YES];
 

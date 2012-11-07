@@ -31,9 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.subjects =[[NSMutableArray alloc]initWithObjects:@"", @"Deutsch",@"Englisch",@"Mathe", nil];
+    self.subjects =[[NSMutableArray alloc]initWithObjects:@"", @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
+    [self.subjects sortUsingSelector:@selector(compare:)];
+    
     selectedSubject=self.AddTaskViewController.selectedSubject;
-    NSLog(@"%i", selectedSubject);
     [self.tableView reloadData];
     
 }

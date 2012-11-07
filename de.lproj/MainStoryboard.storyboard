@@ -28,21 +28,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3e7-2a-cdd">
-                                <rect key="frame" x="20" y="45" width="130" height="131"/>
+                                <rect key="frame" x="170" y="197" width="130" height="131"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Schulkalender">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.50084918479999996" green="0.50084918479999996" blue="0.50084918479999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rg2-4v-tAd" kind="push" id="WQZ-pl-Giq"/>
+                                    <segue destination="C9Q-Qa-4bV" kind="push" id="ip8-oI-uUu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WwA-bh-3Ks">
-                                <rect key="frame" x="170" y="45" width="130" height="131"/>
+                                <rect key="frame" x="20" y="50" width="130" height="131"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Hausaufgaben">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,18 +59,18 @@
                                 <rect key="frame" x="20" y="197" width="130" height="131"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Stundenplan">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.50084918479999996" green="0.50084918479999996" blue="0.50084918479999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="whx-3l-I4I" kind="push" id="GXx-f3-Lzv"/>
+                                    <segue destination="whx-3l-I4I" kind="push" id="l09-cy-l9M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0AW-m8-8w0">
-                                <rect key="frame" x="170" y="197" width="130" height="131"/>
+                                <rect key="frame" x="170" y="50" width="130" height="131"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Notizen">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,7 +101,7 @@
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="SchulOrg" id="WMc-xg-QGc">
-                        <barButtonItem key="leftBarButtonItem" title="Help" id="O4P-vR-0VK">
+                        <barButtonItem key="leftBarButtonItem" title="Infos" id="O4P-vR-0VK">
                             <connections>
                                 <segue destination="6jz-Sv-Xr8" kind="modal" id="pVU-MS-Rfh"/>
                             </connections>
@@ -364,7 +364,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="sXq-Av-vQr">
                                                     <rect key="frame" x="20" y="7" width="260" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
@@ -453,9 +453,9 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="sdsd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E8U-dD-apY">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E8U-dD-apY">
                                                     <rect key="frame" x="20" y="12" width="260" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -474,7 +474,7 @@
                                             <rect key="frame" x="10" y="1" width="300" height="184"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9dY-2t-0do">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="9dY-2t-0do">
                                                     <rect key="frame" x="6" y="7" width="288" height="172"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -525,12 +525,12 @@
             </objects>
             <point key="canvasLocation" x="-2995" y="1690"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Table View Controller - Schulkalender-->
         <scene sceneID="9nR-mb-nYo">
             <objects>
                 <tableViewController id="C9Q-Qa-4bV" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bTC-8h-t4y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8nk-cY-fr2">
@@ -557,7 +557,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="" text="Undone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XpC-LX-c2t">
-                                            <rect key="frame" x="112" y="9" width="75" height="24"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -599,18 +599,19 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="swS-jY-E3Q"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Schulkalender" id="quX-Ka-qKd"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-v6-OZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1995" y="-2143"/>
+            <point key="canvasLocation" x="-4027" y="-823"/>
         </scene>
         <!--Table View Controller - Termin bearbeiten-->
         <scene sceneID="72j-Mr-K11">
             <objects>
                 <tableViewController id="ZDq-aA-GbM" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="daT-xo-NDJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -655,7 +656,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIE-Ho-FKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1434" y="-2143"/>
+            <point key="canvasLocation" x="-3466" y="-823"/>
         </scene>
         <!--Hausaufgaben View Controller - Hausaufgaben-->
         <scene sceneID="oLG-9N-n3G">
@@ -736,21 +737,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tb-Yb-Frj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2935" y="-341"/>
-        </scene>
-        <!--View Controller - Feiertage-->
-        <scene sceneID="OZk-90-reM">
-            <objects>
-                <viewController id="SXq-yt-7hE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rXK-SP-I51">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Feiertage" id="yl8-A0-dA1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uv7-tI-LRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1995" y="-1557"/>
         </scene>
         <!--Add Task View Controller - Neue Aufgabe-->
         <scene sceneID="s1G-07-JoW">
@@ -1052,26 +1038,6 @@
             </objects>
             <point key="canvasLocation" x="-1577" y="-124"/>
         </scene>
-        <!--Tab Bar Controller - Schulkalender-->
-        <scene sceneID="w7G-3Z-5UF">
-            <objects>
-                <tabBarController definesPresentationContext="YES" id="rg2-4v-tAd" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Schulkalender" id="Vxl-Cg-Tfd"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="tHB-Nt-OUq">
-                        <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="SXq-yt-7hE" kind="relationship" relationship="viewControllers" id="dXO-ZK-9bj"/>
-                        <segue destination="C9Q-Qa-4bV" kind="relationship" relationship="viewControllers" id="ckw-zQ-ZJu"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K9s-M9-gL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2978" y="-1526"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1jO-tU-A9s">
             <objects>
@@ -1318,6 +1284,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dKk-N9-1Vp"/>
-        <segue reference="hEs-5i-ukP"/>
+        <segue reference="67H-tr-lVq"/>
     </inferredMetricsTieBreakers>
 </document>
