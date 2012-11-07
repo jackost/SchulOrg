@@ -70,7 +70,7 @@
 {
     JONote *currentNote = [self.notes objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"NoteCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier /*forIndexPath:indexPath*/];
     
     // Configure the cell...
     

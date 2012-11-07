@@ -10,4 +10,6 @@
 
 @interface ImpressumViewController : UIViewController
 
+- (IBAction)resetButtonPressed:(id)sender;
+
 @end
