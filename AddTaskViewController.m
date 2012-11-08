@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
     contentField.delegate=self;
+    selectedSubject=9999;
 }
 
 - (void)didReceiveMemoryWarning

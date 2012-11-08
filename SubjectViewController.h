@@ -20,5 +20,6 @@
 @property (nonatomic, strong) JOTask *task;
 
 - (IBAction)cancelButtonPressed:(id)sender;
+-(IBAction)editButtonPressed:(id)sender;
 
 @end

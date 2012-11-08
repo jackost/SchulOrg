@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.subjects =[[NSMutableArray alloc]initWithObjects:@"", @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
+    self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
     [self.subjects sortUsingSelector:@selector(compare:)];
     
     selectedSubject=self.AddTaskViewController.selectedSubject;
@@ -53,27 +53,28 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [subjects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *UncheckedCellIdentifier = @"UncheckedSubjectCell";
+    static NSString *CheckedCellIdentifier = @"CheckedSubjectCell";
+    
+    NSString *CellIdentifier = (indexPath.row==selectedSubject) ? CheckedCellIdentifier : UncheckedCellIdentifier;
 
-    static NSString *CellIdentifier = @"SubjectCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier /*forIndexPath:indexPath*/];
     cell.textLabel.text = [subjects objectAtIndex:indexPath.row];
     
@@ -89,19 +90,21 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.subjects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -126,6 +129,7 @@
     self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
     
     self.AddTaskViewController.selectedSubject=indexPath.row;
+    NSLog(@"Reihe: %i", selectedSubject);
     self.AddTaskViewController.subjectDone=YES;
     [self.AddTaskViewController.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
@@ -134,5 +138,13 @@
 
 - (IBAction)cancelButtonPressed:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)editButtonPressed:(id)sender {
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 @end

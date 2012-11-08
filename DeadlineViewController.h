@@ -18,6 +18,7 @@
 
 - (IBAction)deadlinePickerChanged:(id)sender;
 - (IBAction)doneButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
 
 
 @end
