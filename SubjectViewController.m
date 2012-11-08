@@ -126,9 +126,13 @@
     self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
     
     self.AddTaskViewController.selectedSubject=indexPath.row;
+    self.AddTaskViewController.subjectDone=YES;
     [self.AddTaskViewController.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
     
 }
 
+- (IBAction)cancelButtonPressed:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end

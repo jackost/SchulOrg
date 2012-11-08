@@ -827,7 +827,7 @@
                                 <action selector="cancelButtonPressed:" destination="Cj8-9t-7Ku" id="XQm-ng-Yme"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vIJ-vw-Sat">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="vIJ-vw-Sat">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="Cj8-9t-7Ku" id="HJf-Xg-X5u"/>
                             </connections>
@@ -836,6 +836,7 @@
                     <connections>
                         <outlet property="contentField" destination="BAU-ED-Mlp" id="HYw-Ly-I3a"/>
                         <outlet property="deadlineField" destination="e88-FT-Ise" id="G36-z2-oM2"/>
+                        <outlet property="doneButton" destination="vIJ-vw-Sat" id="HbG-OS-wO0"/>
                         <outlet property="subjectField" destination="GMz-5n-g9t" id="qB1-fN-vNV"/>
                     </connections>
                 </tableViewController>
@@ -860,7 +861,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tN6-8n-OWX">
-                                            <rect key="frame" x="126" y="10" width="47" height="24"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="44"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -870,7 +871,7 @@
                                 </view>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SelectedSubjectCell" editingAccessoryType="disclosureIndicator" textLabel="qE3-i7-r0S" style="IBUITableViewCellStyleDefault" id="vbk-1H-Trk">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -885,23 +886,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddSubjectCell" editingAccessoryType="disclosureIndicator" textLabel="CNo-PX-slL" style="IBUITableViewCellStyleDefault" id="So5-cV-uSJ">
-                                <rect key="frame" x="0.0" y="136" width="320" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Neues Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CNo-PX-slL">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.001401925212082118" blue="0.2779017857142857" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -910,7 +894,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fach" id="6Gd-iD-0Tj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="TpO-TB-Pvb"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gzt-5c-ve1">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="MDC-3q-Dev" id="mZb-TE-Lgj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmO-Su-wY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1088,9 +1076,6 @@
                             <date key="date" timeIntervalSinceReferenceDate="373331358.19268101">
                                 <!--2012-10-30 23:09:18 +0000-->
                             </date>
-                            <date key="minimumDate" timeIntervalSinceReferenceDate="373978800">
-                                <!--2012-11-07 11:00:00 +0000-->
-                            </date>
                             <timeZone key="timeZone" name="America/Los_Angeles">
                                 <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
@@ -1200,83 +1185,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="-956" y="-424"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="DeadlineViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="deadlinePickerChanged:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="EditNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditNoteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="taskDataChanged:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="HausaufgabenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HausaufgabenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="HelpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeHelpView:"/>
-            </relationships>
-        </class>
-        <class className="HomescreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomescreenViewController.h"/>
-        </class>
-        <class className="ImpressumViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpressumViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="NotizenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotizenViewController.h"/>
-        </class>
-        <class className="StundenplanViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StundenplanViewController.h"/>
-        </class>
-        <class className="SubjectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubjectViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

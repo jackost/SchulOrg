@@ -18,13 +18,17 @@
 -(IBAction)cancelButtonPressed:(id)sender;
 
 @property (nonatomic, assign) int selectedSubject;
-@property (nonatomic, strong) NSDate *deadlineDate;
+@property (nonatomic, assign) BOOL subjectDone;
+@property (nonatomic, assign) BOOL contentDone;
+@property (nonatomic, assign) BOOL deadlineDone;
 
+@property (nonatomic, strong) NSDate *deadlineDate;
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
 @property (nonatomic, strong) DeadlineViewController *DeadlineViewController;
 @property (strong, nonatomic) IBOutlet UITextField *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end

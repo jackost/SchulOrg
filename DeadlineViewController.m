@@ -31,9 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    deadlinePicker.minimumDate = [NSDate date];
     NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
     [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
     deadlineLabel.text = [date_formater stringFromDate:[deadlinePicker date]];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -61,7 +64,6 @@
     NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
     [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
 
-    NSLog(@"%@", [date_formater stringFromDate:[deadlinePicker date]]);
     deadlineLabel.text = [date_formater stringFromDate:[deadlinePicker date]];
 
 
@@ -72,6 +74,7 @@
     self.AddTaskViewController.deadlineField.textLabel.text=self.deadlineLabel.text;
     [self.AddTaskViewController.tableView reloadData];
     self.AddTaskViewController.deadlineDate=[deadlinePicker date];
+    self.AddTaskViewController.deadlineDone=YES;
     [self dismissModalViewControllerAnimated:YES];
 
 }

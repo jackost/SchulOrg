@@ -48,7 +48,16 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    
     [super viewDidAppear:animated];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if ((self.deadlineDone) & (self.subjectDone)) {
+        self.doneButton.enabled=YES;
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -69,6 +78,7 @@
     
     [self.HausaufgabenViewController.tasks addObject:newTask];
     [self dismissModalViewControllerAnimated:YES];
+    
 
 }
 
@@ -86,6 +96,7 @@
 - (void)viewDidUnload {
     [self setSubjectField:nil];
     [self setDeadlineField:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
 }
 @end
