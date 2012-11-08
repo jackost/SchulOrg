@@ -386,6 +386,7 @@
 				3677EFD2164ADD20002DFE83 /* de */,
 			);
 			name = InfoPlist.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
