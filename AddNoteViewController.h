@@ -12,11 +12,14 @@
 
 @interface AddNoteViewController : UITableViewController <UITextFieldDelegate>
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextView *contentField;
 
 - (IBAction)donePressed:(id)sender;
 - (IBAction)cancelPressed:(id)sender;
+-(IBAction)editNameDone:(id)sender;
+
 
 @end

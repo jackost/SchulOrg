@@ -48,7 +48,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.nameField) {
-        [textField resignFirstResponder];
+        [self.contentField  becomeFirstResponder];
     }
     return NO;
 }
@@ -68,10 +68,23 @@
     
 }
 
+-(IBAction)editNameDone:(id)sender{
+    
+    if (self.nameField.text.length!=0) {
+        self.doneButton.enabled=YES;
+    }
+    
+    else {
+        self.doneButton.enabled=NO;
+    }
+}
+
+
 
 - (void)viewDidUnload {
     [self setNameField:nil];
     [self setContentField:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
 }
 @end
