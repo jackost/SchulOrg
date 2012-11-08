@@ -129,7 +129,6 @@
     self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
     
     self.AddTaskViewController.selectedSubject=indexPath.row;
-    NSLog(@"Reihe: %i", selectedSubject);
     self.AddTaskViewController.subjectDone=YES;
     [self.AddTaskViewController.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];

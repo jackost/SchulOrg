@@ -78,6 +78,7 @@
         
         EditTaskViewController *editTaskViewController = segue.destinationViewController;
         editTaskViewController.task = [self.tasks objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        editTaskViewController.HausaufgabenViewController=self;
     }
 }
 

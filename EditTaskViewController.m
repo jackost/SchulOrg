@@ -62,6 +62,33 @@
 
     }
 
+- (IBAction)removeButtonPressed:(id)sender {
+    
+    
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Löschen"
+                                                      message:@"Wollen Sie die Hausaufgabe wirklich löschen ?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Nein"
+                                            otherButtonTitles:@"Ja", nil];
+    [message show];
+    
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView.title isEqualToString:@"Löschen"]) {
+        
+        if(buttonIndex==1) {
+            
+            [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+    }
+}
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == contentField) {
         [textField resignFirstResponder];
@@ -85,6 +112,7 @@
 - (void)viewDidUnload {
     [self setSubjectField:nil];
     [self setDeadlineField:nil];
+    [self setRemoveButton:nil];
     [super viewDidUnload];
 }
 @end
