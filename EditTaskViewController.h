@@ -25,6 +25,5 @@
 
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
--(void)removeAlert;
 
 @end

@@ -33,7 +33,7 @@
     [super viewDidLoad];
     self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
     [self.subjects sortUsingSelector:@selector(compare:)];
-    
+    self.navigationItem.rightBarButtonItem=self.editButtonItem;
     selectedSubject=self.AddTaskViewController.selectedSubject;
     [self.tableView reloadData];
     
@@ -81,17 +81,15 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return self.editing;
 }
-*/
 
 
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -139,11 +137,23 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)editButtonPressed:(id)sender {
-    [self.tableView setEditing:!self.tableView.editing animated:YES];
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate
+{
+    
+    [super setEditing:editing animated:animate];
+    if(editing)
+    {
+        NSLog(@"editMode on");
+    }
+    else
+    {
+        NSLog(@"editMode off");
+    }
 }
 
+
 - (void)viewDidUnload {
+    [self setCancelButton:nil];
     [super viewDidUnload];
 }
 @end

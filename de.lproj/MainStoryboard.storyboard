@@ -380,7 +380,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syc-KH-SIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1752" y="529"/>
+            <point key="canvasLocation" x="-1835" y="467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Az-OX-Iji">
@@ -858,12 +858,10 @@
                                 <action selector="cancelButtonPressed:" destination="MDC-3q-Dev" id="mZb-TE-Lgj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="GcG-pR-C8p">
-                            <connections>
-                                <action selector="editButtonPressed:" destination="MDC-3q-Dev" id="8RG-4M-B6P"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="gzt-5c-ve1" id="Gae-QH-h8j"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmO-Su-wY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1203,90 +1201,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="-4634" y="-661"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="action" name="editNameDone:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="DeadlineViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="deadlinePickerChanged:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="EditNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditNoteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="removeButtonPressed:"/>
-                <relationship kind="action" name="taskDataChanged:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="removeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="HausaufgabenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HausaufgabenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="HelpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeHelpView:"/>
-            </relationships>
-        </class>
-        <class className="HomescreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomescreenViewController.h"/>
-        </class>
-        <class className="ImpressumViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpressumViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="NotizenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotizenViewController.h"/>
-        </class>
-        <class className="SubjectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
