@@ -64,7 +64,7 @@
 
 - (IBAction)removeButtonPressed:(id)sender {
     
-    UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:@"Wollen Sie die Hausaufgabe wirklich löschen ?" delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Ja" otherButtonTitles: nil];
+    UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
     
     [asRemove showInView:self.view];
     
@@ -73,14 +73,11 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if ([actionSheet.title isEqualToString:@"Wollen Sie die Hausaufgabe wirklich löschen ?"]) {
-
-        if(buttonIndex==0) {
+    if(buttonIndex==0) {
             
-            [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
-            [self.navigationController popViewControllerAnimated:YES];
+        [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
+        [self.navigationController popViewControllerAnimated:YES];
          
-        } 
     }
 }
 
