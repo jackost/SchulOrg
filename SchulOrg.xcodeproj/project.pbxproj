@@ -30,6 +30,7 @@
 		36A13A981633664800A49393 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A961633664800A49393 /* EventKit.framework */; };
 		36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A13A971633664800A49393 /* EventKitUI.framework */; };
 		36AE1EE31638570A0034CCC4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */; };
+		36B7C9B1164DC2F600B15740 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B7C9B0164DC2F600B15740 /* MessageUI.framework */; };
 		36D1A9D01639EBD4000541CF /* TermineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9CF1639EBD4000541CF /* TermineViewController.m */; };
 		36D1A9E4163A8F9D000541CF /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D1A9E3163A8F9D000541CF /* EditTaskViewController.m */; };
 		36DD7291164967B800D2C664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36DD728F164967B800D2C664 /* InfoPlist.strings */; };
@@ -78,6 +79,7 @@
 		36A13A971633664800A49393 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		36AE1EE11638570A0034CCC4 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		36AE1EE21638570A0034CCC4 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		36B7C9B0164DC2F600B15740 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		36D1A9CE1639EBD4000541CF /* TermineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermineViewController.h; sourceTree = "<group>"; };
 		36D1A9CF1639EBD4000541CF /* TermineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermineViewController.m; sourceTree = "<group>"; };
 		36D1A9E2163A8F9D000541CF /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B7C9B1164DC2F600B15740 /* MessageUI.framework in Frameworks */,
 				36A13A981633664800A49393 /* EventKit.framework in Frameworks */,
 				36A13A991633664800A49393 /* EventKitUI.framework in Frameworks */,
 				360EA214161F52C30005788D /* UIKit.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		360EA212161F52C30005788D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C9B0164DC2F600B15740 /* MessageUI.framework */,
 				36A13A961633664800A49393 /* EventKit.framework */,
 				36A13A971633664800A49393 /* EventKitUI.framework */,
 				360EA213161F52C30005788D /* UIKit.framework */,

@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface HelpViewController : UIViewController
+@interface HelpViewController : UIViewController <MFMailComposeViewControllerDelegate>
+
 - (IBAction)closeHelpView:(id)sender;
+- (IBAction)feedbackButtonPressed:(id)sender;
+
 
 @end
