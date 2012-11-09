@@ -11,11 +11,14 @@
 @class NotizenViewController;
 @class JONote;
 
-@interface EditNoteViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface EditNoteViewController : UITableViewController <UITextViewDelegate, UIActionSheetDelegate>
 @property (nonatomic, strong) JONote *note;
 
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
 @property (strong, nonatomic) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UILabel *nameField;
+
+-(IBAction)editingDone:(id)sender;
+- (IBAction)removeButtonPressed:(id)sender;
 
 @end

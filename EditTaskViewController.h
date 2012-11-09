@@ -12,7 +12,7 @@
 @class HausaufgabenViewController;
 @class SubjectViewController;
 
-@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate>
+@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) JOTask *task;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;

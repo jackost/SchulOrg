@@ -64,27 +64,23 @@
 
 - (IBAction)removeButtonPressed:(id)sender {
     
+    UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:@"Wollen Sie die Hausaufgabe wirklich löschen ?" delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Ja" otherButtonTitles: nil];
     
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Löschen"
-                                                      message:@"Wollen Sie die Hausaufgabe wirklich löschen ?"
-                                                     delegate:self
-                                            cancelButtonTitle:@"Nein"
-                                            otherButtonTitles:@"Ja", nil];
-    [message show];
+    [asRemove showInView:self.view];
     
 
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if ([alertView.title isEqualToString:@"Löschen"]) {
-        
-        if(buttonIndex==1) {
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if ([actionSheet.title isEqualToString:@"Wollen Sie die Hausaufgabe wirklich löschen ?"]) {
+
+        if(buttonIndex==0) {
             
             [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
             [self.navigationController popViewControllerAnimated:YES];
-            
-        }
+         
+        } 
     }
 }
 

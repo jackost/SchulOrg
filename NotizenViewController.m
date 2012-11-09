@@ -38,6 +38,20 @@
 
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,6 +108,7 @@
         
         EditNoteViewController *EditNoteViewController = segue.destinationViewController;
         EditNoteViewController.note= [self.notes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        EditNoteViewController.NotizenViewController=self;
     }
 }
 
