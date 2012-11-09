@@ -852,16 +852,7 @@
                             <outlet property="delegate" destination="MDC-3q-Dev" id="jL2-ui-uB2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fach" id="6Gd-iD-0Tj">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gzt-5c-ve1">
-                            <connections>
-                                <action selector="cancelButtonPressed:" destination="MDC-3q-Dev" id="mZb-TE-Lgj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="gzt-5c-ve1" id="Gae-QH-h8j"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Fach" id="6Gd-iD-0Tj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmO-Su-wY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,6 +34,7 @@
     self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
     [self.subjects sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
     selectedSubject=self.AddTaskViewController.selectedSubject;
     [self.tableView reloadData];
     
@@ -89,11 +90,9 @@
 }
 
 
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
         [self.subjects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
@@ -101,6 +100,26 @@
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate
+{
+    
+    [super setEditing:editing animated:animate];
+    if(editing)
+    {
+        NSLog(@"editMode on");
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+        
+    }
+    
+    else
+    {
+        NSLog(@"editMode off");
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+        
+    }
 }
 
 
@@ -137,23 +156,12 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animate
-{
+-(IBAction)addButtonPressed:(id)sender {
     
-    [super setEditing:editing animated:animate];
-    if(editing)
-    {
-        NSLog(@"editMode on");
-    }
-    else
-    {
-        NSLog(@"editMode off");
-    }
 }
 
 
 - (void)viewDidUnload {
-    [self setCancelButton:nil];
     [super viewDidUnload];
 }
 @end

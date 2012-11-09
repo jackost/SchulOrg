@@ -16,10 +16,10 @@
 @property (strong, nonatomic) NSMutableArray *subjects;
 @property (nonatomic, strong) AddTaskViewController *AddTaskViewController;
 @property (nonatomic, assign) int selectedSubject;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
 @property (nonatomic, strong) JOTask *task;
 
 -(IBAction)cancelButtonPressed:(id)sender;
+-(IBAction)addButtonPressed:(id)sender;
 
 @end
