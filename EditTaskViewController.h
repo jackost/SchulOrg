@@ -24,5 +24,6 @@
 
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
+- (IBAction)shareButonPressed:(id)sender;
 
 @end

@@ -68,6 +68,7 @@
 
 -(IBAction)editingDone:(id)sender {
     [self.contentField resignFirstResponder];
+    [self.navigationController setToolbarHidden:NO];
     self.navigationItem.rightBarButtonItem=nil;
 }
 
@@ -75,7 +76,7 @@
     
     UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Notiz löschen" otherButtonTitles: nil];
     
-    [asRemove showInView:self.view];
+    [asRemove showFromToolbar:self.navigationController.toolbar];
     
 }
 
@@ -90,6 +91,24 @@
     }
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+
+    [self.navigationController setToolbarHidden:YES];
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    [self.navigationController setToolbarHidden:NO];
+    
+}
 
 
 - (void)viewDidUnload {

@@ -62,13 +62,13 @@
     }
 
 - (IBAction)removeButtonPressed:(id)sender {
-    
 
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
     
     [actionSheet showFromToolbar:self.navigationController.toolbar];
-    
+}
 
+- (IBAction)shareButonPressed:(id)sender {
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
