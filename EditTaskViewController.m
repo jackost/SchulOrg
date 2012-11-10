@@ -38,7 +38,6 @@
     [super viewDidLoad];
     
     contentField.delegate =self;
-    
     self.contentField.text = self.task.content;
     self.subjectField.textLabel.text=self.task.subject;
     [self.doneSwitch setOn:self.task.done];
@@ -64,9 +63,10 @@
 
 - (IBAction)removeButtonPressed:(id)sender {
     
-    UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
+
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
     
-    [asRemove showInView:self.view];
+    [actionSheet showFromToolbar:self.navigationController.toolbar];
     
 
 }
@@ -77,7 +77,7 @@
             
         [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
         [self.navigationController popViewControllerAnimated:YES];
-         
+
     }
 }
 
@@ -100,12 +100,20 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    [self.navigationController setToolbarHidden:NO];
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+
+    
 }
 
 - (void)viewDidUnload {
     [self setSubjectField:nil];
     [self setDeadlineField:nil];
-    [self setRemoveButton:nil];
     [super viewDidUnload];
 }
 @end

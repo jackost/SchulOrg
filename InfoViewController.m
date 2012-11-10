@@ -1,22 +1,22 @@
 //
-//  HelpViewController.m
+//  InfoViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 05.10.12.
+//  Created by Jakob on 10.11.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "HelpViewController.h"
+#import "InfoViewController.h"
 
-@interface HelpViewController ()
+@interface InfoViewController ()
 
 @end
 
-@implementation HelpViewController
+@implementation InfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -26,7 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,12 +40,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)closeHelpView:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+
+
+- (IBAction)doneButtonPressed:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)feedbackButtonPressed:(id)sender {
+    
     
     if ([MFMailComposeViewController canSendMail])
     {
@@ -60,10 +67,10 @@
     else
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
-                                                message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
-                                                delegate:nil
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles: nil];
+                                                        message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
         [alert show];
     }
 }
@@ -92,9 +99,19 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+
+- (IBAction)homepageButtonPressed:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+    
+    if (url)
+    {
+        [[UIApplication sharedApplication]openURL:url];
+    }
 }
 
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end

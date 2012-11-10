@@ -24,6 +24,7 @@
 		3677EFC8164AD61E002DFE83 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFC7164AD61E002DFE83 /* background.png */; };
 		3677EFD4164AE47D002DFE83 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFD3164AE47D002DFE83 /* Icon.png */; };
 		3677EFD6164AE47F002DFE83 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3677EFD5164AE47F002DFE83 /* Icon@2x.png */; };
+		36795F75164E933B00C2446F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36795F74164E933B00C2446F /* InfoViewController.m */; };
 		36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057A816204D06006EF4E4 /* ImpressumViewController.m */; };
 		36A057AD1620554B006EF4E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A057AC1620554B006EF4E4 /* Default@2x.png */; };
 		36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A057EC16206022006EF4E4 /* NotizenViewController.m */; };
@@ -38,7 +39,6 @@
 		36DD72C41649832000D2C664 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD72C31649832000D2C664 /* EditNoteViewController.m */; };
 		36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */; };
 		36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E0D161F68CE000EC087 /* StundenplanViewController.m */; };
-		36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E71E11161F68FF000EC087 /* HelpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +70,8 @@
 		3677EFD2164ADD20002DFE83 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3677EFD3164AE47D002DFE83 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3677EFD5164AE47F002DFE83 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		36795F73164E933B00C2446F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		36795F74164E933B00C2446F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		36A057A716204D06006EF4E4 /* ImpressumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImpressumViewController.h; path = ../ImpressumViewController.h; sourceTree = "<group>"; };
 		36A057A816204D06006EF4E4 /* ImpressumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImpressumViewController.m; path = ../ImpressumViewController.m; sourceTree = "<group>"; };
 		36A057AC1620554B006EF4E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -92,8 +94,6 @@
 		36E71E0A161F68C1000EC087 /* SchulkalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchulkalenderViewController.m; sourceTree = "<group>"; };
 		36E71E0C161F68CE000EC087 /* StundenplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StundenplanViewController.h; sourceTree = "<group>"; };
 		36E71E0D161F68CE000EC087 /* StundenplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StundenplanViewController.m; sourceTree = "<group>"; };
-		36E71E10161F68FF000EC087 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
-		36E71E11161F68FF000EC087 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +119,7 @@
 				360EA219161F52C30005788D /* SchulOrg */,
 				360EA212161F52C30005788D /* Frameworks */,
 				360EA210161F52C30005788D /* Products */,
+				36795F77164E934100C2446F /* Info */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,7 +155,6 @@
 				360EA238161F56C80005788D /* Notizen */,
 				360EA237161F56AF0005788D /* Schulkalender */,
 				360EA236161F56A60005788D /* Stundenplan */,
-				36E71E0F161F68E2000EC087 /* Help */,
 				36A057AB16204D16006EF4E4 /* Impressum */,
 				360EA21A161F52C30005788D /* Supporting Files */,
 			);
@@ -245,6 +245,15 @@
 			name = Homescreen;
 			sourceTree = "<group>";
 		};
+		36795F77164E934100C2446F /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				36795F73164E933B00C2446F /* InfoViewController.h */,
+				36795F74164E933B00C2446F /* InfoViewController.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		36A057AB16204D16006EF4E4 /* Impressum */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,16 +261,6 @@
 				36A057A816204D06006EF4E4 /* ImpressumViewController.m */,
 			);
 			name = Impressum;
-			sourceTree = "<group>";
-		};
-		36E71E0F161F68E2000EC087 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				36E71E10161F68FF000EC087 /* HelpViewController.h */,
-				36E71E11161F68FF000EC087 /* HelpViewController.m */,
-			);
-			name = Help;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +354,6 @@
 				360EA224161F52C40005788D /* AppDelegate.m in Sources */,
 				36E71E0B161F68C1000EC087 /* SchulkalenderViewController.m in Sources */,
 				36E71E0E161F68CE000EC087 /* StundenplanViewController.m in Sources */,
-				36E71E12161F68FF000EC087 /* HelpViewController.m in Sources */,
 				36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */,
 				36A057A916204D06006EF4E4 /* ImpressumViewController.m in Sources */,
 				36A057ED16206022006EF4E4 /* NotizenViewController.m in Sources */,
@@ -369,6 +367,7 @@
 				3607D655164096A2008B7378 /* DeadlineViewController.m in Sources */,
 				36DD729C16496C6200D2C664 /* JONote.m in Sources */,
 				36DD72C41649832000D2C664 /* EditNoteViewController.m in Sources */,
+				36795F75164E933B00C2446F /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

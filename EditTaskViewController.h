@@ -21,7 +21,6 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) IBOutlet UITextField *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
-@property (strong, nonatomic) IBOutlet UIButton *removeButton;
 
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
