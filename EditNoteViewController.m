@@ -74,22 +74,115 @@
 
 - (IBAction)removeButtonPressed:(id)sender {
     
-    UIActionSheet *asRemove = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Notiz löschen" otherButtonTitles: nil];
+    UIActionSheet *removeActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Notiz löschen" otherButtonTitles: nil];
     
-    [asRemove showFromToolbar:self.navigationController.toolbar];
+    [removeActionSheet showFromToolbar:self.navigationController.toolbar];
+    [removeActionSheet setTag:1];
     
+}
+
+- (IBAction)actionButtonPressed:(id)sender {
+    
+    UIActionSheet *actionActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Drucken", nil];
+    [actionActionSheet setTag:0];
+    
+    [actionActionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
             
-    if(buttonIndex==0) {
+    
+    if (actionSheet.tag==0)
+    {
+        if (buttonIndex==0)
+        {
+            if ([MFMailComposeViewController canSendMail])
+            {
+                MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+                mailer.mailComposeDelegate = self;
+                [mailer setSubject:[NSString stringWithFormat:@"%@",self.nameField.text]];
+                NSString *emailBody = [NSString stringWithFormat:@"%@",self.contentField.text];
+                [mailer setMessageBody:emailBody isHTML:NO];
+                // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
+                // NSData *imageData = UIImagePNGRepresentation(myImage);
+                // [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
+                [self presentModalViewController:mailer animated:YES];
+            }
+            
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                                message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles: nil];
+                [alert show];
+            }
+        }
         
-        [self.NotizenViewController.notes removeObjectAtIndex:self.NotizenViewController.tableView.indexPathForSelectedRow.row];
-        [self.navigationController popViewControllerAnimated:YES];
-   
+        else if (buttonIndex==1)
+        {
+            UIPrintInteractionController *printController = [UIPrintInteractionController sharedPrintController];
+            
+            if(printController) {
+                
+                printController.delegate = self;
+                
+                UIPrintInfo *printInfo = [UIPrintInfo printInfo];
+                printInfo.outputType = UIPrintInfoOutputGrayscale;
+                printInfo.jobName = [NSString stringWithFormat:@"Notiz"];
+                printInfo.duplex = UIPrintInfoDuplexNone;
+                printController.printInfo = printInfo;
+                printController.showsPageRange = NO;
+                printController.printingItem = [NSString stringWithFormat:@"%@\n\n%@",self.nameField.text, self.contentField.text];
+                
+                void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
+                    if (!completed && error) {
+                        NSLog(@"FAILED! due to error in domain %@ with error code %u", error.domain, error.code);
+                    }
+                };
+                
+                [printController presentAnimated:YES completionHandler:completionHandler];
+            }
+        }
+    }
+
+    else if (actionSheet.tag==1)
+    {
+        if(buttonIndex==0)
+        {
+            [self.NotizenViewController.notes removeObjectAtIndex:self.NotizenViewController.tableView.indexPathForSelectedRow.row];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
     }
 }
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
 

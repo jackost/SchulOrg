@@ -461,7 +461,7 @@ Jakob Ostrovsky
         <scene sceneID="wxe-1G-v8A">
             <objects>
                 <tableViewController id="plG-Gw-Koz" customClass="AddNoteViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="IEt-Ka-W0B">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="IEt-Ka-W0B">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -556,7 +556,7 @@ Jakob Ostrovsky
         <scene sceneID="SaW-I9-ufi">
             <objects>
                 <tableViewController id="xuU-rg-IOC" customClass="EditNoteViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DO7-8g-LZX">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DO7-8g-LZX">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -614,7 +614,11 @@ Jakob Ostrovsky
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="action" id="0fa-aa-LPn"/>
+                        <barButtonItem systemItem="action" id="0fa-aa-LPn">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="xuU-rg-IOC" id="gth-4H-iJc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="qvc-Or-04o"/>
                         <barButtonItem systemItem="trash" id="e50-SX-VIo">
                             <connections>
@@ -652,26 +656,14 @@ Jakob Ostrovsky
             </objects>
             <point key="canvasLocation" x="-2995" y="1690"/>
         </scene>
-        <!--Table View Controller - Schulkalender-->
+        <!--Schulkalender View Controller - Schulkalender-->
         <scene sceneID="9nR-mb-nYo">
             <objects>
-                <tableViewController id="C9Q-Qa-4bV" sceneMemberID="viewController">
+                <tableViewController id="C9Q-Qa-4bV" customClass="SchulkalenderViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bTC-8h-t4y">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8nk-cY-fr2">
-                            <rect key="frame" x="0.0" y="110" width="320" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                            <state key="normal" title="+">
-                                <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="undoneEventCell" textLabel="XpC-LX-c2t" style="IBUITableViewCellStyleDefault" id="z3p-6J-llL">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -680,7 +672,7 @@ Jakob Ostrovsky
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="" text="Undone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XpC-LX-c2t">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XpC-LX-c2t">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -689,30 +681,6 @@ Jakob Ostrovsky
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="ZDq-aA-GbM" kind="push" id="hEs-5i-ukP"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doneEventCell" textLabel="7Jz-rl-Bwg" style="IBUITableViewCellStyleDefault" id="hTg-FZ-Jr7">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Done" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Jz-rl-Bwg">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" red="0.50084918479999996" green="0.50084918479999996" blue="0.50084918479999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="ZDq-aA-GbM" kind="push" id="67H-tr-lVq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -723,64 +691,18 @@ Jakob Ostrovsky
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="swS-jY-E3Q"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Schulkalender" id="quX-Ka-qKd"/>
+                    <navigationItem key="navigationItem" title="Schulkalender" id="quX-Ka-qKd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q64-X2-ngS">
+                            <connections>
+                                <action selector="addEventButtonPressed:" destination="C9Q-Qa-4bV" id="x9K-CM-xQR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-v6-OZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2975" y="-823"/>
-        </scene>
-        <!--Table View Controller - Termin bearbeiten-->
-        <scene sceneID="72j-Mr-K11">
-            <objects>
-                <tableViewController id="ZDq-aA-GbM" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="daT-xo-NDJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="g9t-6D-GLL">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QSv-4V-kmH">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mpZ-hH-11E">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ctq-gK-3Wv">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="ZDq-aA-GbM" id="R4a-k5-IrJ"/>
-                            <outlet property="delegate" destination="ZDq-aA-GbM" id="Ffs-nj-Ipb"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Termin bearbeiten" id="mup-ZV-RIe"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cIE-Ho-FKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2414" y="-823"/>
         </scene>
         <!--Hausaufgaben View Controller - Hausaufgaben-->
         <scene sceneID="oLG-9N-n3G">
@@ -1134,7 +1056,11 @@ Jakob Ostrovsky
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="action" id="wDn-rW-Up0"/>
+                        <barButtonItem systemItem="action" id="wDn-rW-Up0">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="gmH-h6-571" id="TuS-I7-X6t"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="mh2-C9-Y8b"/>
                         <barButtonItem systemItem="trash" id="MSo-ty-XRZ">
                             <connections>
@@ -1337,101 +1263,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="-4857" y="-708"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="action" name="editNameDone:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="DeadlineViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="deadlinePickerChanged:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="EditNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editingDone:"/>
-                <relationship kind="action" name="removeButtonPressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="removeButtonPressed:"/>
-                <relationship kind="action" name="shareButonPressed:"/>
-                <relationship kind="action" name="taskDataChanged:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="HausaufgabenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HausaufgabenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="HomescreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomescreenViewController.h"/>
-        </class>
-        <class className="ImpressumViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpressumViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="InfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="feedbackButtonPressed:"/>
-                <relationship kind="action" name="homepageButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="NotizenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotizenViewController.h"/>
-        </class>
-        <class className="SubjectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonPressed:"/>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="67H-tr-lVq"/>
         <segue reference="dKk-N9-1Vp"/>
     </inferredMetricsTieBreakers>
 </document>

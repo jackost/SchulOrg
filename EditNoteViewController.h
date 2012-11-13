@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class NotizenViewController;
 @class JONote;
 
-@interface EditNoteViewController : UITableViewController <UITextViewDelegate, UIActionSheetDelegate>
+@interface EditNoteViewController : UITableViewController <UITextViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIPrintInteractionControllerDelegate>
 @property (nonatomic, strong) JONote *note;
 
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
@@ -20,5 +21,6 @@
 
 -(IBAction)editingDone:(id)sender;
 - (IBAction)removeButtonPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
 
 @end

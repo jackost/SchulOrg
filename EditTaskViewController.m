@@ -63,24 +63,115 @@
 
 - (IBAction)removeButtonPressed:(id)sender {
 
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
-    
-    [actionSheet showFromToolbar:self.navigationController.toolbar];
+    UIActionSheet *deleteActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Hausaufgabe löschen" otherButtonTitles: nil];
+        [deleteActionSheet setTag:1];
+    [deleteActionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
-- (IBAction)shareButonPressed:(id)sender {
+- (IBAction)actionButtonPressed:(id)sender {
+    
+    UIActionSheet *removeActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Drucken", nil];
+    [removeActionSheet setTag:0];
+    
+    [removeActionSheet showFromToolbar:self.navigationController.toolbar];
+
 }
+
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if(buttonIndex==0) {
-            
-        [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
-        [self.navigationController popViewControllerAnimated:YES];
-
+    if (actionSheet.tag==1)
+    {
+        if(buttonIndex==0)
+        {
+            [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+   
     }
+    
+    else if (actionSheet.tag==0)
+    {
+        if (buttonIndex==0)
+        {
+            if ([MFMailComposeViewController canSendMail])
+            {
+                MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+                mailer.mailComposeDelegate = self;
+                [mailer setSubject:@"Meine Hausaufgabe"];
+                NSString *emailBody = [NSString stringWithFormat:@"Meine %@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
+                [mailer setMessageBody:emailBody isHTML:NO];
+                // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
+                // NSData *imageData = UIImagePNGRepresentation(myImage);
+                // [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
+                [self presentModalViewController:mailer animated:YES];
+            }
+            
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                                message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles: nil];
+                [alert show];
+            }
+        }
+    
+        else if (buttonIndex==1)
+        {
+            UIPrintInteractionController *printController = [UIPrintInteractionController sharedPrintController];
+        
+            if(printController) {
+            
+                printController.delegate = self;
+            
+                UIPrintInfo *printInfo = [UIPrintInfo printInfo];
+                printInfo.outputType = UIPrintInfoOutputGeneral;
+                printInfo.jobName = [NSString stringWithFormat:@"%@ Hausaufgabe", self.subjectField.textLabel.text];
+                printInfo.duplex = UIPrintInfoDuplexLongEdge;
+                printController.printInfo = printInfo;
+                printController.showsPageRange = NO;
+                printController.printingItem = [NSString stringWithFormat:@"Meine %@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
+            
+                void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
+                    if (!completed && error) {
+                        NSLog(@"FAILED! due to error in domain %@ with error code %u", error.domain, error.code);
+                    }
+                };
+            
+                [printController presentAnimated:YES completionHandler:completionHandler];
+            
+            }
+        }
+    }
+    
 }
 
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == contentField) {

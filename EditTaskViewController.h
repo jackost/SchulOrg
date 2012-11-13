@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class JOTask;
 @class HausaufgabenViewController;
 @class SubjectViewController;
 
-@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
+@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIPrintInteractionControllerDelegate>
 
 @property (nonatomic, strong) JOTask *task;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
@@ -24,6 +25,6 @@
 
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
-- (IBAction)shareButonPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
 
 @end
