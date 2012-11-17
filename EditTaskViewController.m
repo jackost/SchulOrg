@@ -37,10 +37,11 @@
 {
     [super viewDidLoad];
     
-    contentField.delegate =self;
     self.contentField.text = self.task.content;
     self.subjectField.textLabel.text=self.task.subject;
     [self.doneSwitch setOn:self.task.done];
+    self.contentField.delegate=self;
+
     
     NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
     [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
@@ -56,7 +57,6 @@
 
 -(IBAction)taskDataChanged:(id)sender{
     
-    self.task.content=self.contentField.text;
     self.task.done=self.doneSwitch.isOn;
 
     }
@@ -98,7 +98,7 @@
             {
                 MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
                 mailer.mailComposeDelegate = self;
-                [mailer setSubject:@"Meine Hausaufgabe"];
+                [mailer setSubject:[NSString stringWithFormat:@"%@ Hausaufgabe",subjectField.textLabel.text]];
                 NSString *emailBody = [NSString stringWithFormat:@"Meine %@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
                 [mailer setMessageBody:emailBody isHTML:NO];
                 // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
@@ -173,13 +173,22 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == contentField) {
-        [textField resignFirstResponder];
-    }
-    return NO;
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(editingDone:)];
 }
 
+-(void)textViewDidChange:(UITextView *)textView{
+    self.task.content=self.contentField.text;
+}
+
+
+-(IBAction)editingDone:(id)sender {
+    [self.contentField resignFirstResponder];
+    [self.navigationController setToolbarHidden:NO];
+    self.navigationItem.rightBarButtonItem=nil;
+}
 
 
 -(void)viewDidAppear:(BOOL)animated{

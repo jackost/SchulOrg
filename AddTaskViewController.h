@@ -12,10 +12,7 @@
 @class SubjectViewController;
 @class DeadlineViewController;
 
-@interface AddTaskViewController : UITableViewController <UITextFieldDelegate>
-
-- (IBAction)doneButtonPressed:(id)sender;
--(IBAction)cancelButtonPressed:(id)sender;
+@interface AddTaskViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, assign) int selectedSubject;
 @property (nonatomic, assign) BOOL subjectDone;
@@ -27,8 +24,12 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
 @property (nonatomic, strong) DeadlineViewController *DeadlineViewController;
-@property (strong, nonatomic) IBOutlet UITextField *contentField;
+@property (strong, nonatomic) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+- (IBAction)doneButtonPressed:(id)sender;
+-(IBAction)cancelButtonPressed:(id)sender;
+
 
 @end

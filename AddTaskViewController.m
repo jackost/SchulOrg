@@ -38,7 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    contentField.delegate=self;
     selectedSubject=1337;
 }
 
@@ -74,10 +73,24 @@
     }
 }
 
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    
+   
+}
+
+
 - (IBAction)doneButtonPressed:(id)sender {
     JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
     
     [self.HausaufgabenViewController.tasks addObject:newTask];
+    UILocalNotification *notification =[[UILocalNotification alloc]init];
+    [notification setAlertBody:[NSString stringWithFormat: @"%@ Hausaufgabe noch zu erledigen",self.subjectField.textLabel.text]];
+    [notification setFireDate:deadlineDate];
+    [notification setAlertAction:@"Launch"]; //The button's text that launches the application and is shown in the alert
+    [notification setHasAction: YES]; //Set that pushing the button will launch the application
+    [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1]; //Set the Application Icon Badge Number of the application's icon to the current Application Icon Badge Number plus 1
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification]; //Schedule the notification with the system
     [self dismissModalViewControllerAnimated:YES];
     
 
@@ -87,12 +100,6 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == contentField) {
-        [textField resignFirstResponder];
-    }
-    return NO;
-}
 
 - (void)viewDidUnload {
     [self setSubjectField:nil];

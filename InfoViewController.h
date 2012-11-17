@@ -14,5 +14,6 @@
 - (IBAction)doneButtonPressed:(id)sender;
 - (IBAction)feedbackButtonPressed:(id)sender;
 - (IBAction)homepageButtonPressed:(id)sender;
+- (IBAction)helpButtonPressed:(id)sender;
 
 @end

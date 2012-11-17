@@ -13,16 +13,17 @@
 @class HausaufgabenViewController;
 @class SubjectViewController;
 
-@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIPrintInteractionControllerDelegate>
+@interface EditTaskViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIPrintInteractionControllerDelegate>
 
 @property (nonatomic, strong) JOTask *task;
 @property (nonatomic, strong) HausaufgabenViewController *HausaufgabenViewController;
 
 @property (nonatomic, strong) IBOutlet UISwitch *doneSwitch;
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
-@property (nonatomic, strong) IBOutlet UITextField *contentField;
+@property (nonatomic, strong) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 
+-(IBAction)editingDone:(id)sender;
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
 - (IBAction)actionButtonPressed:(id)sender;

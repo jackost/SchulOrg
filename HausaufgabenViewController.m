@@ -30,11 +30,12 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *loadTasks = [defaults objectForKey:@"savedTasks"];
     self.tasks = [[NSMutableArray alloc]init];
     [self.tasks setArray:[NSKeyedUnarchiver unarchiveObjectWithData:loadTasks]];
-    [super viewDidLoad];
     [self.tableView reloadData];
 }
 
