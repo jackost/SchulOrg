@@ -116,4 +116,15 @@
      */
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
+- (IBAction)doneButtonPressed:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+
+}
 @end

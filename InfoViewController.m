@@ -112,7 +112,7 @@
 
 - (IBAction)helpButtonPressed:(id)sender {
 
-
+    NSLog(@"%@",[[[UIApplication sharedApplication] scheduledLocalNotifications]description]);
     
 }
 

@@ -56,8 +56,25 @@
     [super viewWillAppear:animated];
     
     if ((self.deadlineDone) & (self.subjectDone)) {
+        [self.remindLabel setTextColor:[UIColor blackColor]];
+        [self.remindStepper setEnabled:YES];
         self.doneButton.enabled=YES;
     }
+    
+    self.notification = [[UILocalNotification alloc]init];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+    NSDateComponents* components = [[NSDateComponents alloc]init];
+    [components setDay:(-1)];
+    NSDate* fireDate = [calendar dateByAddingComponents: components toDate: self.deadlineDate options: 0];
+    [self.notification setAlertBody:[NSString stringWithFormat: @"%@ Hausaufgabe noch zu erledigen",self.subjectField.textLabel.text]];
+    [self.notification setFireDate:fireDate];
+    [self.notification setAlertAction:@"Anzeigen"];
+    [self.notification setHasAction: YES];
+    [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+    NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
+    [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
+    NSLog(@"%@", [date_formatter stringFromDate:fireDate]);
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -81,19 +98,21 @@
 
 
 - (IBAction)doneButtonPressed:(id)sender {
-    JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO];
     
+    JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO LocalNotification:self.notification];
     [self.HausaufgabenViewController.tasks addObject:newTask];
-    UILocalNotification *notification =[[UILocalNotification alloc]init];
-    [notification setAlertBody:[NSString stringWithFormat: @"%@ Hausaufgabe noch zu erledigen",self.subjectField.textLabel.text]];
-    [notification setFireDate:self.deadlineDate];
-    [notification setAlertAction:@"Anzeigen"]; //The button's text that launches the application and is shown in the alert
-    [notification setHasAction: YES]; //Set that pushing the button will launch the application
-    [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1]; //Set the Application Icon Badge Number of the application's icon to the current Application Icon Badge Number plus 1
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification]; //Schedule the notification with the system
+    
+    if (self.notification!=nil) {
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:self.notification]; //Schedule the notification with the system
+        NSLog(@"Notification = Not-nil");
+
+    }
+    
+    else{
+        NSLog(@"Notification = nil");
+    }
     [self dismissModalViewControllerAnimated:YES];
-    NSArray *notificationArray = [[UIApplication sharedApplication] scheduledLocalNotifications];
-    NSLog(@"%@", notificationArray);
     
 }
 
@@ -101,23 +120,40 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)remindStepper:(id)sender {
+- (IBAction)remindStepperChanged:(id)sender {
     UIStepper *stepper =sender;
+    
+    self.notification = [[UILocalNotification alloc]init];
+
     if ([stepper value]==0) {
         [self.remindLabel setText:@"Nicht erinnern"];
+        self.notification=Nil;
 
     }
-    else if ((int)[stepper value]==1) {
-        [self.remindLabel setText:[NSString stringWithFormat:@"%i Tag vor Abgabe", (int)stepper.value]];
-    }
-    
     else {
-        [self.remindLabel setText:[NSString stringWithFormat:@"%i Tage vor Abgabe", (int)stepper.value]];
+        if ((int)[stepper value]==1) {
+            
+            [self.remindLabel setText:[NSString stringWithFormat:@"%i Tag vor Abgabe", (int)stepper.value]];
+        }
+    
+        else {
+            
+            [self.remindLabel setText:[NSString stringWithFormat:@"%i Tage vor Abgabe", (int)stepper.value]];
+        }
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+        NSDateComponents* components = [[NSDateComponents alloc]init];
+        [components setDay:((int)stepper.value)*-1];
+        NSDate* fireDate = [calendar dateByAddingComponents: components toDate: self.deadlineDate options: 0];
+        
+        [self.notification setAlertBody:[NSString stringWithFormat: @"%@ Hausaufgabe noch zu erledigen",self.subjectField.textLabel.text]];
+        [self.notification setFireDate:fireDate];
+        [self.notification setAlertAction:@"Anzeigen"]; 
+        [self.notification setHasAction: YES];
+        [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
+        [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
+        NSLog(@"%@", [date_formatter stringFromDate:fireDate]);
     }
-    
-    NSLog(@"daysStepper Value = %i",(int)stepper.value);
-    
-    
 }
 
 
@@ -126,6 +162,7 @@
     [self setDeadlineField:nil];
     [self setDoneButton:nil];
     [self setRemindLabel:nil];
+    [self setRemindStepper:nil];
     [super viewDidUnload];
 }
 @end

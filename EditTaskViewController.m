@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
     
+    
     self.contentField.text = self.task.content;
     self.subjectField.textLabel.text=self.task.subject;
     [self.doneSwitch setOn:self.task.done];
@@ -79,13 +80,22 @@
 
 - (IBAction)doneSwitchChanged:(id)sender {
     UISwitch *switcher = sender;
-    if (switcher.isOn==1) {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        [UIApplication sharedApplication].applicationIconBadgeNumber--;
+    if (self.task.notification!=nil) {
         
+    
+        if (switcher.isOn==1) {
+        
+        [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
+        //[UIApplication sharedApplication].applicationIconBadgeNumber--;
+        }
+        
+        else {
+        
+            [[UIApplication sharedApplication]scheduleLocalNotification:self.task.notification];
+        
+        }
     }
 }
-
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
@@ -94,6 +104,11 @@
         if(buttonIndex==0)
         {
             [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
+            //[[UIApplication sharedApplication]cancelLocalNotification:[[self.HausaufgabenViewController.tasks objectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row]notification]];
+            if (self.task.notification!=nil) {
+                [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
+            }
+
             [self.navigationController popViewControllerAnimated:YES];
         }
    
@@ -150,11 +165,9 @@
                 };
             
                 [printController presentAnimated:YES completionHandler:completionHandler];
-            
             }
         }
     }
-    
 }
 
 

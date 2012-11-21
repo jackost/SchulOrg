@@ -66,6 +66,7 @@
     if (buttonIndex==0) {
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedTasks"];
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedNotes"];
+        [[UIApplication sharedApplication]cancelAllLocalNotifications];
         
     }
 }

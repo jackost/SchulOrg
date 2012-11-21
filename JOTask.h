@@ -14,8 +14,9 @@
 @property (nonatomic, assign)BOOL done;
 @property (nonatomic, strong)NSString *subject;
 @property (nonatomic, strong)NSDate *deadline;
+@property (nonatomic, strong)UILocalNotification *notification;
 
--(id)initWithSubject:(NSString *)subject Content:(NSString *)content Deadline:(NSDate *)deadline Done:(BOOL)done;
+-(id)initWithSubject:(NSString *)subject Content:(NSString *)content Deadline:(NSDate *)deadline Done:(BOOL)done LocalNotification:(UILocalNotification*)notification;
 
 
 

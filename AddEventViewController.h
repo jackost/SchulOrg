@@ -10,4 +10,7 @@
 
 @interface AddEventViewController : UITableViewController
 
+- (IBAction)doneButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+
 @end

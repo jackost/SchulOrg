@@ -15,7 +15,7 @@
 @synthesize subject = _subject;
 @synthesize deadline = _deadline;
 
--(id)initWithSubject:(NSString *)subject Content:(NSString *)content Deadline:(NSDate *)deadline Done:(BOOL)done {
+-(id)initWithSubject:(NSString *)subject Content:(NSString *)content Deadline:(NSDate *)deadline Done:(BOOL)done LocalNotification:(UILocalNotification*)notification {
     self = [super init];
     
     if (self) {
@@ -23,6 +23,7 @@
         self.content=content;
         self.subject=subject;
         self.deadline=deadline;
+        self.notification=notification;
     }
     return self;
 }
@@ -36,6 +37,7 @@
 		self.subject = [coder decodeObjectForKey:@"subject"];
 		self.deadline = [coder decodeObjectForKey:@"deadline"];
         self.done = [coder decodeBoolForKey:@"done"];
+        self.notification = [coder decodeObjectForKey:@"notification"];
 	}
 	
 	return self;
@@ -48,6 +50,7 @@
 	[coder encodeObject:self.content forKey:@"content"];
 	[coder encodeObject:self.deadline forKey:@"deadline"];
 	[coder encodeObject:self.subject forKey:@"subject"];
+    [coder encodeObject:self.notification forKey:@"notification"];
 
 }
 

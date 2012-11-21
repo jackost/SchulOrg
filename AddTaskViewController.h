@@ -27,11 +27,13 @@
 @property (strong, nonatomic) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (strong, nonatomic) UILocalNotification *notification;
 @property (strong, nonatomic) IBOutlet UILabel *remindLabel;
+@property (strong, nonatomic) IBOutlet UIStepper *remindStepper;
 
 - (IBAction)doneButtonPressed:(id)sender;
 -(IBAction)cancelButtonPressed:(id)sender;
-- (IBAction)remindStepper:(id)sender;
+- (IBAction)remindStepperChanged:(id)sender;
 
 
 @end

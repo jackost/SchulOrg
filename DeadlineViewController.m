@@ -33,9 +33,9 @@
     [super viewDidLoad];
     
     deadlinePicker.minimumDate = [NSDate date];
-    NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
-    [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
-    deadlineLabel.text = [date_formater stringFromDate:[deadlinePicker date]];
+    NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
+    [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
+    deadlineLabel.text = [date_formatter stringFromDate:[deadlinePicker date]];
     
 
     // Uncomment the following line to preserve selection between presentations.
@@ -61,10 +61,10 @@
 
 - (IBAction)deadlinePickerChanged:(id)sender {
     
-    NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
-    [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
+    NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
+    [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
 
-    deadlineLabel.text = [date_formater stringFromDate:[deadlinePicker date]];
+    deadlineLabel.text = [date_formatter stringFromDate:[deadlinePicker date]];
 
 
 }
