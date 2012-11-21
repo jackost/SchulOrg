@@ -34,7 +34,7 @@
     self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
     [self.subjects sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+
     selectedSubject=self.AddTaskViewController.selectedSubject;
     [self.tableView reloadData];
     
@@ -157,9 +157,27 @@
 }
 
 -(IBAction)addButtonPressed:(id)sender {
-    
+   
+    UIAlertView *addSubjectAlert = [[UIAlertView alloc]initWithTitle:@"Fach hinzufügen"
+                                                             message:@"Name des neuen Fachs"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Abbrechen"
+                                                   otherButtonTitles:@"Ok", nil];
+    [addSubjectAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [addSubjectAlert textFieldAtIndex:0].autocapitalizationType=UITextAutocapitalizationTypeWords;
+    [addSubjectAlert show];
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==1) {
+        [self.subjects addObject:[NSString stringWithFormat:@"%@",[alertView textFieldAtIndex:0].text]];
+        [self.subjects sortUsingSelector:@selector(compare:)];
+        [self.tableView reloadData];
+    }
+    else if (buttonIndex==0){
+        NSLog(@"Cancel");
+    }
+}
 
 - (void)viewDidUnload {
     [super viewDidUnload];

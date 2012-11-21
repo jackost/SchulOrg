@@ -86,18 +86,38 @@
     [self.HausaufgabenViewController.tasks addObject:newTask];
     UILocalNotification *notification =[[UILocalNotification alloc]init];
     [notification setAlertBody:[NSString stringWithFormat: @"%@ Hausaufgabe noch zu erledigen",self.subjectField.textLabel.text]];
-    [notification setFireDate:deadlineDate];
-    [notification setAlertAction:@"Launch"]; //The button's text that launches the application and is shown in the alert
+    [notification setFireDate:self.deadlineDate];
+    [notification setAlertAction:@"Anzeigen"]; //The button's text that launches the application and is shown in the alert
     [notification setHasAction: YES]; //Set that pushing the button will launch the application
     [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1]; //Set the Application Icon Badge Number of the application's icon to the current Application Icon Badge Number plus 1
     [[UIApplication sharedApplication] scheduleLocalNotification:notification]; //Schedule the notification with the system
     [self dismissModalViewControllerAnimated:YES];
+    NSArray *notificationArray = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSLog(@"%@", notificationArray);
     
-
 }
 
 -(void)cancelButtonPressed:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)remindStepper:(id)sender {
+    UIStepper *stepper =sender;
+    if ([stepper value]==0) {
+        [self.remindLabel setText:@"Nicht erinnern"];
+
+    }
+    else if ((int)[stepper value]==1) {
+        [self.remindLabel setText:[NSString stringWithFormat:@"%i Tag vor Abgabe", (int)stepper.value]];
+    }
+    
+    else {
+        [self.remindLabel setText:[NSString stringWithFormat:@"%i Tage vor Abgabe", (int)stepper.value]];
+    }
+    
+    NSLog(@"daysStepper Value = %i",(int)stepper.value);
+    
+    
 }
 
 
@@ -105,6 +125,7 @@
     [self setSubjectField:nil];
     [self setDeadlineField:nil];
     [self setDoneButton:nil];
+    [self setRemindLabel:nil];
     [super viewDidUnload];
 }
 @end

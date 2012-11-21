@@ -35,6 +35,7 @@
     NSData *loadNotes = [defaults objectForKey:@"savedNotes"];
     self.notes = [[NSMutableArray alloc]init];
     [self.notes setArray:[NSKeyedUnarchiver unarchiveObjectWithData:loadNotes]];
+    
     [self.tableView reloadData];
 
 }
@@ -71,6 +72,14 @@
     }
 }
 #pragma mark - Table view data source
+
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return self.editing;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

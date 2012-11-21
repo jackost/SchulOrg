@@ -77,6 +77,15 @@
 
 }
 
+- (IBAction)doneSwitchChanged:(id)sender {
+    UISwitch *switcher = sender;
+    if (switcher.isOn==1) {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [UIApplication sharedApplication].applicationIconBadgeNumber--;
+        
+    }
+}
+
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
@@ -176,7 +185,7 @@
 
 -(void)textViewDidBeginEditing:(UITextView *)textView {
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(editingDone:)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(editingDonePressed:)];
 }
 
 -(void)textViewDidChange:(UITextView *)textView{
@@ -184,7 +193,7 @@
 }
 
 
--(IBAction)editingDone:(id)sender {
+-(IBAction)editingDonePressed:(id)sender {
     [self.contentField resignFirstResponder];
     [self.navigationController setToolbarHidden:NO];
     self.navigationItem.rightBarButtonItem=nil;

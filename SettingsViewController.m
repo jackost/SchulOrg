@@ -57,11 +57,19 @@
 
 - (IBAction)resetButtonPressed:(id)sender {
     
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedTasks"];
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedNotes"];
 
-    
+    UIActionSheet *resetActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:@"Reset" otherButtonTitles: nil];
+    [resetActionSheet showInView:self.view];
 }
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex==0) {
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedTasks"];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedNotes"];
+        
+    }
+}
+    
 
 
 

@@ -23,9 +23,10 @@
 @property (nonatomic, strong) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
 
--(IBAction)editingDone:(id)sender;
+-(IBAction)editingDonePressed:(id)sender;
 -(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
 - (IBAction)actionButtonPressed:(id)sender;
+- (IBAction)doneSwitchChanged:(id)sender;
 
 @end

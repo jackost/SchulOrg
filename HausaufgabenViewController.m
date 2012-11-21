@@ -36,6 +36,7 @@
     NSData *loadTasks = [defaults objectForKey:@"savedTasks"];
     self.tasks = [[NSMutableArray alloc]init];
     [self.tasks setArray:[NSKeyedUnarchiver unarchiveObjectWithData:loadTasks]];
+
     [self.tableView reloadData];
 }
 
@@ -85,6 +86,14 @@
 }
 
 #pragma mark - Table view data source
+
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return self.editing;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
