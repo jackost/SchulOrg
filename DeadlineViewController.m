@@ -72,6 +72,8 @@
 - (IBAction)doneButtonPressed:(id)sender {
     
     self.AddTaskViewController.deadlineField.textLabel.text=self.deadlineLabel.text;
+    self.AddTaskViewController.deadlineField.textLabel.font = [UIFont boldSystemFontOfSize:18];
+
     [self.AddTaskViewController.tableView reloadData];
     self.AddTaskViewController.deadlineDate=[deadlinePicker date];
     self.AddTaskViewController.deadlineDone=YES;

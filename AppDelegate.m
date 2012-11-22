@@ -12,12 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"%i",[[UIApplication sharedApplication]applicationIconBadgeNumber]);
     // Override point for customization after application launch.
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif) {
         
-        NSLog(@"becomeActive");
 
         // Show Alert Here
     }
@@ -41,7 +39,6 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
-    NSLog(@"enterForeground");
 
 }
 
@@ -59,7 +56,6 @@
     
         
         // Show Alert Here
-    NSLog(@"didRecieveNotification");
 
 }
 

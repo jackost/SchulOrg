@@ -73,7 +73,6 @@
     [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
     NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
     [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
-    NSLog(@"%@", [date_formatter stringFromDate:fireDate]);
 
 }
 
@@ -105,7 +104,6 @@
     if (self.notification!=nil) {
         
         [[UIApplication sharedApplication] scheduleLocalNotification:self.notification]; //Schedule the notification with the system
-        NSLog(@"Notification = Not-nil");
 
     }
     
@@ -152,7 +150,6 @@
         [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
         NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
         [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
-        NSLog(@"%@", [date_formatter stringFromDate:fireDate]);
     }
 }
 

@@ -31,10 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
+    //self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+     self.subjects = [[NSMutableArray alloc]init];
+    [self.subjects setArray:[defaults objectForKey:@"savedSubjects"]];
     [self.subjects sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
-
+    
     selectedSubject=self.AddTaskViewController.selectedSubject;
     [self.tableView reloadData];
     
@@ -51,10 +54,25 @@
     [self.tableView reloadData];
     
 }
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (animated) {
+        NSArray *savedSubjects = [NSArray arrayWithArray:self.subjects];
+        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+        [defaults setObject:savedSubjects forKey:@"savedSubjects"];
+        
+    }
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
 
 #pragma mark - Table view data source
 
@@ -109,14 +127,12 @@
     [super setEditing:editing animated:animate];
     if(editing)
     {
-        NSLog(@"editMode on");
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
         
     }
     
     else
     {
-        NSLog(@"editMode off");
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
         
     }
@@ -144,7 +160,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
-    
+    self.AddTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
     self.AddTaskViewController.selectedSubject=indexPath.row;
     self.AddTaskViewController.subjectDone=YES;
     [self.AddTaskViewController.tableView reloadData];
@@ -175,7 +191,6 @@
         [self.tableView reloadData];
     }
     else if (buttonIndex==0){
-        NSLog(@"Cancel");
     }
 }
 

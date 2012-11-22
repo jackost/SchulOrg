@@ -43,6 +43,8 @@
 
 - (IBAction)badgeCountPressed:(id)sender {
     self.badgeCountLabel.text=[NSString stringWithFormat:@"%d", [UIApplication sharedApplication].applicationIconBadgeNumber];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[[NSArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil] forKey:@"savedSubjects"];
 }
 
 - (void)viewDidUnload {
