@@ -86,7 +86,10 @@
         if (switcher.isOn==1) {
         
         [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
-        //[UIApplication sharedApplication].applicationIconBadgeNumber--;
+            if ([NSDate date]>=self.task.notification.fireDate) {
+                
+                [UIApplication sharedApplication].applicationIconBadgeNumber--;
+            }
         }
         
         else {
@@ -104,9 +107,14 @@
         if(buttonIndex==0)
         {
             [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
-            //[[UIApplication sharedApplication]cancelLocalNotification:[[self.HausaufgabenViewController.tasks objectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row]notification]];
             if (self.task.notification!=nil) {
                 [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
+                
+                if ([NSDate date]>=self.task.notification.fireDate) {
+                    
+                    [UIApplication sharedApplication].applicationIconBadgeNumber--;
+                }
+
             }
 
             [self.navigationController popViewControllerAnimated:YES];
@@ -123,7 +131,7 @@
                 MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
                 mailer.mailComposeDelegate = self;
                 [mailer setSubject:[NSString stringWithFormat:@"%@ Hausaufgabe",subjectField.textLabel.text]];
-                NSString *emailBody = [NSString stringWithFormat:@"Meine %@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
+                NSString *emailBody = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
                 [mailer setMessageBody:emailBody isHTML:NO];
                 // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
                 // NSData *imageData = UIImagePNGRepresentation(myImage);
@@ -156,7 +164,7 @@
                 printInfo.duplex = UIPrintInfoDuplexLongEdge;
                 printController.printInfo = printInfo;
                 printController.showsPageRange = NO;
-                printController.printingItem = [NSString stringWithFormat:@"Meine %@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
+                printController.printingItem = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
             
                 void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
                     if (!completed && error) {
