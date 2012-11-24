@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
     selectedSubject=1337;
+    deadlineDate=[NSDate date];
 }
 
 - (void)didReceiveMemoryWarning

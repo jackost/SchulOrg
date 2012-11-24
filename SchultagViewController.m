@@ -21,6 +21,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     
+            [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadTableView) name:@"schultagReloadTableView" object:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,12 +40,17 @@
     
 }
 
-
+-(void)reloadTableView{
+    
+    [self.tableView reloadData];
+    
+}
 
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:YES];
-
+    [self.tableView reloadData];
+    
     
 }
 - (void)didReceiveMemoryWarning
@@ -82,6 +89,24 @@
     
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section==0) {
+        NSArray *tage = [[NSArray alloc]initWithObjects:@"Montag", @"Dienstag", @"Mittwoch", @"Donnerstag", @"Freitag", nil];
+         self.titel = [[NSString alloc]initWithFormat:@"%@", [tage objectAtIndex:self.tabBarController.selectedIndex]];
+
+    }
+    
+    else{
+        self.titel = nil;
+    }
+    
+    return self.titel;
+
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

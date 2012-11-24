@@ -14,5 +14,8 @@
 
 @property (nonatomic, strong) StundenplanViewController *stundenplanViewController;
 @property (nonatomic, strong) NSMutableArray *schultagArray;
+@property (nonatomic, strong) NSString *titel;
+
+-(void)reloadTableView;
 
 @end

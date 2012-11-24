@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StundenplanViewController : UITabBarController <NSCoding>
+@interface StundenplanViewController : UITabBarController <UITabBarControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *montagArray;
 @property (nonatomic, strong) NSMutableArray *dienstagArray;

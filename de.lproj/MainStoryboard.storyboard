@@ -121,10 +121,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="doa-rk-Ifc">
-                                <rect key="frame" x="192" y="397" width="111" height="44"/>
+                                <rect key="frame" x="235" y="397" width="65" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ResetBadge">
+                                <state key="normal" title="Reset">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="175-T4-s30">
-                                <rect key="frame" x="139" y="403" width="47" height="31"/>
+                                <rect key="frame" x="137" y="397" width="47" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -373,7 +373,33 @@ All Rights Reserved </string>
                                 <cells/>
                             </tableViewSection>
                             <tableViewSection headerTitle="Stundenplan" id="yS4-D1-Cj7">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="f4s-N2-V8W">
+                                        <rect key="frame" x="0.0" y="138" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Keine Gruppen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCn-At-aM6">
+                                                    <rect key="frame" x="12" y="11" width="181" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="3" id="PNC-PY-DO1">
+                                                    <rect key="frame" x="201" y="8" width="94" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <action selector="stundenplanGruppenStepperChanged:" destination="vPN-Ec-c6J" eventType="valueChanged" id="zHE-NI-OtJ"/>
+                                                    </connections>
+                                                </stepper>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Schulkalender" id="esG-2K-rHl">
                                 <cells/>
@@ -384,7 +410,7 @@ All Rights Reserved </string>
                             <tableViewSection id="gMh-od-8ur">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="39" id="CG3-IO-OVV">
-                                        <rect key="frame" x="0.0" y="224" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="270" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="38"/>
@@ -394,7 +420,7 @@ All Rights Reserved </string>
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Reset">
+                                                    <state key="normal" title="Hard Reset">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -418,6 +444,9 @@ All Rights Reserved </string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Einstellungen" id="n4S-Mn-9yt"/>
+                    <connections>
+                        <outlet property="stundenplanGruppenLabel" destination="iCn-At-aM6" id="q4f-81-abM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvC-qj-YiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -505,7 +534,7 @@ Jakob Ostrovsky
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQl-Zu-gYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4923" y="1044"/>
+            <point key="canvasLocation" x="-4911" y="1736"/>
         </scene>
         <!--Notizen View Controller - Notizen-->
         <scene sceneID="FbZ-B3-AKb">
@@ -577,7 +606,7 @@ Jakob Ostrovsky
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-3875" y="456"/>
+            <point key="canvasLocation" x="-3579" y="-72"/>
         </scene>
         <!--Add Note View Controller - Neue Notiz-->
         <scene sceneID="wxe-1G-v8A">
@@ -658,7 +687,7 @@ Jakob Ostrovsky
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syc-KH-SIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2811" y="-5"/>
+            <point key="canvasLocation" x="-2515" y="-533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Az-OX-Iji">
@@ -673,7 +702,7 @@ Jakob Ostrovsky
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVT-74-P1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3399" y="-5"/>
+            <point key="canvasLocation" x="-3103" y="-533"/>
         </scene>
         <!--Edit Note View Controller - Notiz bearbeiten-->
         <scene sceneID="SaW-I9-ufi">
@@ -758,7 +787,7 @@ Jakob Ostrovsky
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0y-yp-aB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3399" y="609"/>
+            <point key="canvasLocation" x="-3103" y="81"/>
         </scene>
         <!--Stundenplan View Controller - Stundenplan-->
         <scene sceneID="bYL-cY-Nl0">
@@ -787,7 +816,7 @@ Jakob Ostrovsky
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjH-9c-LxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5355" y="618"/>
+            <point key="canvasLocation" x="-5343" y="1310"/>
         </scene>
         <!--Schulkalender View Controller - Schulkalender-->
         <scene sceneID="9nR-mb-nYo">
@@ -836,7 +865,7 @@ Jakob Ostrovsky
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Z-v6-OZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5271" y="13"/>
+            <point key="canvasLocation" x="-3597" y="925"/>
         </scene>
         <!--Add Event View Controller - Termin hinzufügen-->
         <scene sceneID="qJs-cY-FYa">
@@ -928,7 +957,7 @@ Jakob Ostrovsky
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9t-k3-q3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4334" y="-10"/>
+            <point key="canvasLocation" x="-2660" y="902"/>
         </scene>
         <!--Hausaufgaben View Controller - Hausaufgaben-->
         <scene sceneID="oLG-9N-n3G">
@@ -1565,7 +1594,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhs-m8-1A2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4811" y="-5"/>
+            <point key="canvasLocation" x="-3137" y="907"/>
         </scene>
         <!--Schultag View Controller - Dienstag-->
         <scene sceneID="j9j-XG-aqi">
@@ -1613,7 +1642,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Am0-90-dDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4470" y="1044"/>
+            <point key="canvasLocation" x="-4458" y="1736"/>
         </scene>
         <!--Schultag View Controller - Freitag-->
         <scene sceneID="bR7-Y6-K7E">
@@ -1661,7 +1690,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNy-UK-ALH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4488" y="1674"/>
+            <point key="canvasLocation" x="-4476" y="2366"/>
         </scene>
         <!--Schultag View Controller - Donnerstag-->
         <scene sceneID="Jkg-GO-6f4">
@@ -1709,47 +1738,44 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-Fv-yDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4970" y="1640"/>
+            <point key="canvasLocation" x="-4958" y="2332"/>
         </scene>
         <!--Schultag View Controller - Mittwoch-->
         <scene sceneID="B3K-Uu-MCV">
             <objects>
                 <tableViewController title="Mittwoch" id="Aqu-i9-PKC" customClass="SchultagViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="MiB-pT-raI">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="MiB-pT-raI">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="vYB-At-97R">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Esf-p2-PcE" detailTextLabel="gow-FB-jKz" style="IBUITableViewCellStyleSubtitle" id="VPJ-Gm-vAq">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Esf-p2-PcE" detailTextLabel="gow-FB-jKz" style="IBUITableViewCellStyleSubtitle" id="VPJ-Gm-vAq">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Esf-p2-PcE">
+                                            <rect key="frame" x="10" y="2" width="43" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Esf-p2-PcE">
-                                                    <rect key="frame" x="10" y="2" width="43" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gow-FB-jKz">
-                                                    <rect key="frame" x="10" y="24" width="41" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gow-FB-jKz">
+                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Aqu-i9-PKC" id="fO2-b4-xRp"/>
                             <outlet property="delegate" destination="Aqu-i9-PKC" id="nbG-BX-onP"/>
@@ -1760,7 +1786,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwI-na-rOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3952" y="1044"/>
+            <point key="canvasLocation" x="-3940" y="1736"/>
         </scene>
     </scenes>
     <classes>
@@ -1873,6 +1899,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="resetButtonPressed:"/>
+                <relationship kind="action" name="stundenplanGruppenStepperChanged:"/>
+                <relationship kind="outlet" name="stundenplanGruppenLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="StundenplanViewController" superclassName="UITabBarController">

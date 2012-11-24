@@ -34,14 +34,17 @@
 
     //JOSubject *englisch = [[JOSubject alloc]initWithSubject:@"Englisch" AndTeacher:@"Fr. Peschel"];
     
-    self.montagArray = [[NSMutableArray alloc]initWithObjects:@"Englisch", @"Deutsch", @"Physik", nil];
-    self.dienstagArray = [[NSMutableArray alloc]initWithObjects:@"Französisch", @"Sport", @"Philosophie", nil];
-    self.mittwochArray = [[NSMutableArray alloc]init];
-    self.donnerstagArray = [[NSMutableArray alloc]init];
-    self.freitagArray = [[NSMutableArray alloc]init];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSMutableArray *schultageArray = [[NSMutableArray alloc]initWithObjects:self.montagArray, self.dienstagArray, self.mittwochArray, self.donnerstagArray, self.freitagArray, nil];
-    [[NSUserDefaults standardUserDefaults]setObject:schultageArray forKey:@"schultageArray"];
+    
+    self.montagArray = [[NSMutableArray alloc]initWithArray:[[defaults objectForKey:@"schultageArray"]objectAtIndex:0]];
+    self.dienstagArray = [[NSMutableArray alloc]initWithArray:[[defaults objectForKey:@"schultageArray"]objectAtIndex:1]];
+    self.mittwochArray = [[NSMutableArray alloc]initWithArray:[[defaults objectForKey:@"schultageArray"]objectAtIndex:2]];
+    self.donnerstagArray = [[NSMutableArray alloc]initWithArray:[[defaults objectForKey:@"schultageArray"]objectAtIndex:3]];
+    self.freitagArray = [[NSMutableArray alloc]initWithArray:[[defaults objectForKey:@"schultageArray"]objectAtIndex:4]];
+    
+    self.schultageArray = [[NSMutableArray alloc]initWithObjects:self.montagArray, self.dienstagArray, self.mittwochArray, self.donnerstagArray, self.freitagArray, nil];
+    [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
 
 	// Do any additional setup after loading the view.
 }
@@ -58,8 +61,13 @@
 
 - (IBAction)buttonPressed:(id)sender {
     
-    NSLog(@"View-Index: %i, %@", self.selectedIndex, [self.selectedViewController description]);
-    }
+    [[self.schultageArray objectAtIndex:self.selectedIndex ] addObject:@"Fach"];
+    [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
+    
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagReloadTableView" object:self];
+
+}
 
 
 

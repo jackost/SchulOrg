@@ -62,6 +62,8 @@
     [resetActionSheet showInView:self.view];
 }
 
+
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex==0) {
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedTasks"];
@@ -72,7 +74,25 @@
     }
 }
     
+- (IBAction)stundenplanGruppenStepperChanged:(id)sender {
+    
+    UIStepper *stepper = sender;
+    if ((int)stepper.value==1) {
+        self.stundenplanGruppenLabel.text=@"Keine Gruppen";
+    }
+    
+    
+    else{
+                
+        self.stundenplanGruppenLabel.text= [NSString stringWithFormat:@"%i Stunden pro Gruppe", (int)stepper.value];
+
+    }
+}
 
 
 
+- (void)viewDidUnload {
+    [self setStundenplanGruppenLabel:nil];
+    [super viewDidUnload];
+}
 @end

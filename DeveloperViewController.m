@@ -38,6 +38,7 @@
 - (IBAction)resetBadgeButtonPressed:(id)sender {
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"schultageArray"];
 
 }
 

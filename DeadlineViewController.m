@@ -33,6 +33,7 @@
     [super viewDidLoad];
     
     deadlinePicker.minimumDate = [NSDate date];
+    deadlinePicker.date=self.AddTaskViewController.deadlineDate;
     NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
     [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
     deadlineLabel.text = [date_formatter stringFromDate:[deadlinePicker date]];

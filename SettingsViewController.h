@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UITableViewController <UIActionSheetDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *stundenplanGruppenLabel;
 
 - (IBAction)resetButtonPressed:(id)sender;
+- (IBAction)stundenplanGruppenStepperChanged:(id)sender;
 
 @end
