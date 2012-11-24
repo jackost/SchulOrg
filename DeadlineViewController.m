@@ -85,4 +85,17 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)nextWeekButton:(id)sender {
+    
+    NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
+    [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+    NSDateComponents* components = [[NSDateComponents alloc]init];
+    [components setDay:7];
+    NSDate *nextWeekDate = [calendar dateByAddingComponents:components toDate:[NSDate date] options:0];
+    deadlineLabel.text = [date_formatter stringFromDate:nextWeekDate];
+
+    [self.deadlinePicker setDate:nextWeekDate animated:YES];
+}
+
 @end

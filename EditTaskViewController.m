@@ -84,12 +84,18 @@
         
     
         if (switcher.isOn==1) {
-        
-        [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
-            if ([NSDate date]>=self.task.notification.fireDate) {
+            
+            [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
+            
+            NSLog(@"%@", self.task.notification.fireDate);
+
+           /* if ([NSDate date]>=self.task.notification.fireDate) {
                 
                 [UIApplication sharedApplication].applicationIconBadgeNumber--;
-            }
+                NSLog(@"badge--");
+            
+            } */
+
         }
         
         else {
@@ -102,20 +108,20 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if (actionSheet.tag==1)
+    if (actionSheet.tag==1) //Delete
     {
         if(buttonIndex==0)
         {
-            [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
-            if (self.task.notification!=nil) {
+            if (self.task.notification) {
                 [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
                 
-                if ([NSDate date]>=self.task.notification.fireDate) {
-                    
+                /* if (([NSDate date]>=self.task.notification.fireDate) & (self.task.done==NO) )
+                {
                     [UIApplication sharedApplication].applicationIconBadgeNumber--;
-                }
+                } */
 
             }
+            [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
 
             [self.navigationController popViewControllerAnimated:YES];
         }
@@ -131,7 +137,7 @@
                 MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
                 mailer.mailComposeDelegate = self;
                 [mailer setSubject:[NSString stringWithFormat:@"%@ Hausaufgabe",subjectField.textLabel.text]];
-                NSString *emailBody = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
+                NSString *emailBody = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text, self.deadlineField.textLabel.text, self.contentField.text];
                 [mailer setMessageBody:emailBody isHTML:NO];
                 // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
                 // NSData *imageData = UIImagePNGRepresentation(myImage);

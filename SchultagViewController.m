@@ -1,28 +1,26 @@
 //
-//  NotizenViewController.m
+//  SchultagViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 05.11.12.
+//  Created by Jakob on 24.11.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "NotizenViewController.h"
-#import "AddNoteViewController.h"
-#import "EditNoteViewController.h"
-#import "JONote.h"
+#import "SchultagViewController.h"
+#import "StundenplanViewController.h"
+#import "JOSubject.h"
 
-@interface NotizenViewController ()
+@interface SchultagViewController ()
 
 @end
 
-@implementation NotizenViewController
+@implementation SchultagViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-
     }
     return self;
 }
@@ -31,55 +29,30 @@
 {
     [super viewDidLoad];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *loadNotes = [defaults objectForKey:@"savedNotes"];
-    self.notes = [[NSMutableArray alloc]init];
-    [self.notes setArray:[NSKeyedUnarchiver unarchiveObjectWithData:loadNotes]];
     
-    [self.tableView reloadData];
-
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
+
 
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    [super viewDidAppear:animated];
-    [self.navigationController setToolbarHidden:YES];
+    [super viewDidAppear:YES];
 
-    [self.tableView reloadData];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
     
 }
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    if (animated) {
-        NSData *savedNotes = [NSKeyedArchiver archivedDataWithRootObject:self.notes];
-        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-        [defaults setObject:savedNotes forKey:@"savedNotes"];
-    }
-}
 #pragma mark - Table view data source
-
-
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return self.editing;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -89,41 +62,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.notes.count;
+    // Return the number of rows in the section.
+    
+    NSArray *schultageArray = [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"schultageArray"]];
+    self.schultagArray = [[NSMutableArray alloc]initWithArray:[schultageArray objectAtIndex:self.tabBarController.selectedIndex]];
+    NSLog(@"%@", [self.schultagArray description]);
+    
+    return [self.schultagArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JONote *currentNote = [self.notes objectAtIndex:indexPath.row];
-    static NSString *CellIdentifier = @"NoteCell";
+    static NSString *CellIdentifier = @"SubjectCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier /*forIndexPath:indexPath*/];
     
     // Configure the cell...
     
-    NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
-    [date_formater setDateFormat:@"dd.MM.yyyy"];
-    
-    cell.textLabel.text=currentNote.name;
-    cell.detailTextLabel.text=[date_formater stringFromDate:currentNote.date];
+    cell.textLabel.text=[self.schultagArray objectAtIndex:indexPath.row];
     
     return cell;
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"AddNoteSegue"]) {
-        
-        UINavigationController *ANNavcon = segue.destinationViewController;
-        AddNoteViewController *ANViewController = [ANNavcon.viewControllers objectAtIndex:0];
-        ANViewController.NotizenViewController=self;
-    }
-    else if ([segue.identifier isEqualToString:@"EditNoteSegue"]){
-        
-        EditNoteViewController *EditNoteViewController = segue.destinationViewController;
-        EditNoteViewController.note= [self.notes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        EditNoteViewController.NotizenViewController=self;
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -134,20 +92,19 @@
 }
 */
 
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.notes removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
+*/
 
 /*
 // Override to support rearranging the table view.

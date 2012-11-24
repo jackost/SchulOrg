@@ -59,7 +59,7 @@
                                 <rect key="frame" x="20" y="197" width="130" height="131"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Stundenplan">
-                                    <color key="titleColor" red="0.50084918479999996" green="0.50084918479999996" blue="0.50084918479999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20000001788139343" green="0.31372550129890442" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -458,27 +458,34 @@ Jakob Ostrovsky
             </objects>
             <point key="canvasLocation" x="-5703" y="-2199"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Schultag View Controller - Montag-->
         <scene sceneID="Owc-ct-Jw5">
             <objects>
-                <tableViewController id="Vf6-C1-gpn" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Montag" title="Montag" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vf6-C1-gpn" customClass="SchultagViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="A8B-dI-YnH">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LessonCell" textLabel="kkq-xc-zEb" style="IBUITableViewCellStyleDefault" id="bzZ-x2-dNZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="UYi-u3-yCR" detailTextLabel="l1Q-7w-A6z" style="IBUITableViewCellStyleSubtitle" id="bzZ-x2-dNZ">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lesson" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkq-xc-zEb">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYi-u3-yCR">
+                                            <rect key="frame" x="10" y="2" width="43" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1Q-7w-A6z">
+                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -486,17 +493,19 @@ Jakob Ostrovsky
                                 </view>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Vf6-C1-gpn" id="nJK-qB-ABb"/>
                             <outlet property="delegate" destination="Vf6-C1-gpn" id="D6e-ej-Vzg"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="7hh-WS-HBU"/>
-                    <navigationItem key="navigationItem" id="HgC-Qz-gVk"/>
+                    <tabBarItem key="tabBarItem" title="Montag" id="7hh-WS-HBU"/>
+                    <navigationItem key="navigationItem" title="Montag" id="HgC-Qz-gVk"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQl-Zu-gYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4643" y="856"/>
+            <point key="canvasLocation" x="-4923" y="1044"/>
         </scene>
         <!--Notizen View Controller - Notizen-->
         <scene sceneID="FbZ-B3-AKb">
@@ -751,11 +760,17 @@ Jakob Ostrovsky
             </objects>
             <point key="canvasLocation" x="-3399" y="609"/>
         </scene>
-        <!--Tab Bar Controller - Stundenplan-->
+        <!--Stundenplan View Controller - Stundenplan-->
         <scene sceneID="bYL-cY-Nl0">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="whx-3l-I4I" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Stundenplan" id="kcz-ky-zlR"/>
+                <tabBarController definesPresentationContext="YES" id="whx-3l-I4I" customClass="StundenplanViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Stundenplan" id="kcz-ky-zlR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lhl-Vv-E1s">
+                            <connections>
+                                <action selector="buttonPressed:" destination="whx-3l-I4I" id="xPS-Up-5pH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="w3n-mQ-JuT">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -764,6 +779,10 @@ Jakob Ostrovsky
                     </tabBar>
                     <connections>
                         <segue destination="Vf6-C1-gpn" kind="relationship" relationship="viewControllers" id="N1A-xH-FnM"/>
+                        <segue destination="amc-GG-4s5" kind="relationship" relationship="viewControllers" id="LW6-fQ-tdz"/>
+                        <segue destination="Aqu-i9-PKC" kind="relationship" relationship="viewControllers" id="fhD-SS-fQV"/>
+                        <segue destination="0Ho-cA-nUB" kind="relationship" relationship="viewControllers" id="r6H-Dq-kc5"/>
+                        <segue destination="j8q-XA-MiW" kind="relationship" relationship="viewControllers" id="bsk-Vc-DLn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjH-9c-LxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1373,7 +1392,7 @@ Jakob Ostrovsky
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="Doe-wS-0kY">
-                            <rect key="frame" x="0.0" y="206" width="320" height="216"/>
+                            <rect key="frame" x="0.0" y="200" width="320" height="216"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <date key="date" timeIntervalSinceReferenceDate="373331358.19268101">
                                 <!--2012-10-30 23:09:18 +0000-->
@@ -1413,13 +1432,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="x6r-DP-pYU">
                                 <cells/>
                             </tableViewSection>
-                            <tableViewSection id="C6Q-sP-haL">
-                                <cells/>
-                            </tableViewSection>
                             <tableViewSection id="sqb-j0-9da">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9uR-79-5WO">
-                                        <rect key="frame" x="0.0" y="90" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="70" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1438,12 +1454,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="JFL-AA-bUj">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="32" id="eAo-lC-43f">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="34"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ofT-cc-9nr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Nächste Woche">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="nextWeekButton:" destination="2Mr-rl-9u9" eventType="touchUpInside" id="GlD-no-vCN"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
-                            <tableViewSection id="9MA-SN-HvD">
-                                <cells/>
-                            </tableViewSection>
-                            <tableViewSection id="cEj-4d-nbt">
+                            <tableViewSection id="ZuL-eJ-7BK">
                                 <cells/>
                             </tableViewSection>
                         </sections>
@@ -1527,6 +1567,201 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-4811" y="-5"/>
         </scene>
+        <!--Schultag View Controller - Dienstag-->
+        <scene sceneID="j9j-XG-aqi">
+            <objects>
+                <tableViewController title="Dienstag" id="amc-GG-4s5" customClass="SchultagViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NA1-Bt-BQB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="fxL-kb-7m0" detailTextLabel="sr9-ba-eD1" style="IBUITableViewCellStyleSubtitle" id="wbT-4B-iRa">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fxL-kb-7m0">
+                                            <rect key="frame" x="10" y="2" width="43" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sr9-ba-eD1">
+                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="amc-GG-4s5" id="3wU-OZ-7ia"/>
+                            <outlet property="delegate" destination="amc-GG-4s5" id="72j-bP-k1D"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Dienstag" id="ico-QS-gNT"/>
+                    <navigationItem key="navigationItem" title="Dienstag" id="Esf-Ap-362"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Am0-90-dDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4470" y="1044"/>
+        </scene>
+        <!--Schultag View Controller - Freitag-->
+        <scene sceneID="bR7-Y6-K7E">
+            <objects>
+                <tableViewController title="Freitag" id="j8q-XA-MiW" customClass="SchultagViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="g3N-N2-LLR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Jja-Yt-dMO" detailTextLabel="KpK-AF-1dM" style="IBUITableViewCellStyleSubtitle" id="kFF-PO-vwv">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jja-Yt-dMO">
+                                            <rect key="frame" x="10" y="2" width="43" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KpK-AF-1dM">
+                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="j8q-XA-MiW" id="o8x-1J-4b3"/>
+                            <outlet property="delegate" destination="j8q-XA-MiW" id="wjZ-Ha-mBe"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Freitag" id="g6u-41-6RH"/>
+                    <navigationItem key="navigationItem" title="Freitag" id="JGa-N1-2aV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNy-UK-ALH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4488" y="1674"/>
+        </scene>
+        <!--Schultag View Controller - Donnerstag-->
+        <scene sceneID="Jkg-GO-6f4">
+            <objects>
+                <tableViewController title="Donnerstag" id="0Ho-cA-nUB" customClass="SchultagViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6Kj-UI-lIL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="bMV-Er-FXH" detailTextLabel="4a0-ic-YAX" style="IBUITableViewCellStyleSubtitle" id="6gd-TI-uKo">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bMV-Er-FXH">
+                                            <rect key="frame" x="10" y="2" width="43" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4a0-ic-YAX">
+                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0Ho-cA-nUB" id="p3v-wD-PsT"/>
+                            <outlet property="delegate" destination="0Ho-cA-nUB" id="hD1-Rf-tbV"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Donnerstag" id="Q5N-LS-gaP"/>
+                    <navigationItem key="navigationItem" title="Donnerstag" id="VSU-md-w2M"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-Fv-yDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4970" y="1640"/>
+        </scene>
+        <!--Schultag View Controller - Mittwoch-->
+        <scene sceneID="B3K-Uu-MCV">
+            <objects>
+                <tableViewController title="Mittwoch" id="Aqu-i9-PKC" customClass="SchultagViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="MiB-pT-raI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="vYB-At-97R">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Esf-p2-PcE" detailTextLabel="gow-FB-jKz" style="IBUITableViewCellStyleSubtitle" id="VPJ-Gm-vAq">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Esf-p2-PcE">
+                                                    <rect key="frame" x="10" y="2" width="43" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gow-FB-jKz">
+                                                    <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Aqu-i9-PKC" id="fO2-b4-xRp"/>
+                            <outlet property="delegate" destination="Aqu-i9-PKC" id="nbG-BX-onP"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Mittwoch" id="tMW-vF-dZp"/>
+                    <navigationItem key="navigationItem" title="Mittwoch" id="Aq4-8C-qIA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwI-na-rOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3952" y="1044"/>
+        </scene>
     </scenes>
     <classes>
         <class className="AddEventViewController" superclassName="UITableViewController">
@@ -1567,6 +1802,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="cancelButtonPressed:"/>
                 <relationship kind="action" name="deadlinePickerChanged:"/>
                 <relationship kind="action" name="doneButtonPressed:"/>
+                <relationship kind="action" name="nextWeekButton:"/>
                 <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
             </relationships>
@@ -1630,10 +1866,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="addEventButtonPressed:"/>
             </relationships>
         </class>
+        <class className="SchultagViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchultagViewController.h"/>
+        </class>
         <class className="SettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="resetButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="StundenplanViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StundenplanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:"/>
             </relationships>
         </class>
         <class className="SubjectViewController" superclassName="UITableViewController">

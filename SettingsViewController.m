@@ -67,6 +67,7 @@
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedTasks"];
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"savedNotes"];
         [[UIApplication sharedApplication]cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
         
     }
 }

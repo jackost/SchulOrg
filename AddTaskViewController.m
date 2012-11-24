@@ -70,7 +70,6 @@
     [self.notification setFireDate:fireDate];
     [self.notification setAlertAction:@"Anzeigen"];
     [self.notification setHasAction: YES];
-    [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
     NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
     [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
 
@@ -101,10 +100,10 @@
     JOTask *newTask =[[JOTask alloc]initWithSubject:subjectField.textLabel.text Content:contentField.text Deadline:deadlineDate Done:NO LocalNotification:self.notification];
     [self.HausaufgabenViewController.tasks addObject:newTask];
     
-    if (self.notification!=nil) {
+    if (self.notification) {
         
         [[UIApplication sharedApplication] scheduleLocalNotification:self.notification]; //Schedule the notification with the system
-
+    
     }
     
     else{
@@ -147,7 +146,7 @@
         [self.notification setFireDate:fireDate];
         [self.notification setAlertAction:@"Anzeigen"]; 
         [self.notification setHasAction: YES];
-        [self.notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        
         NSDateFormatter *date_formatter = [[NSDateFormatter alloc]init];
         [date_formatter setDateFormat:@"EEEE, dd.MM.yyyy"];
     }

@@ -16,7 +16,6 @@
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif) {
         
-
         // Show Alert Here
     }
 
@@ -54,9 +53,10 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
-        
-        // Show Alert Here
+    
+    //[UIApplication sharedApplication].applicationIconBadgeNumber++;
 
+        // Show Alert Here
 }
 
 @end
