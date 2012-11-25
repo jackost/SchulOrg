@@ -77,7 +77,7 @@
     static NSString *CheckedCellIdentifier = @"CheckedRoomCell";
     
     NSString *CellIdentifier = (indexPath.row==self.selectedRoom) ? CheckedCellIdentifier : UncheckedCellIdentifier;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     cell.textLabel.text=[self.rooms objectAtIndex:indexPath.row];

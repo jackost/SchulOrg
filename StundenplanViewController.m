@@ -115,10 +115,19 @@
 
 - (IBAction)addButtonPressed:(id)sender {
     
-    NSMutableArray *currentDay = [[NSMutableArray alloc]initWithArray:[self.schultageArray objectAtIndex:self.selectedIndex]];
+    self.schultageArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"schultageArray" ]] ;
     
-    [[self.schultageArray objectAtIndex:self.selectedIndex ] addObject:[NSString stringWithFormat:@"%u. Stunde", currentDay.count+1]];
+    NSLog(@"%@", [self.schultageArray objectAtIndex:self.selectedIndex]);
+    
+    NSMutableArray *currentDay = [[NSMutableArray alloc]initWithArray:[self.schultageArray objectAtIndex:self.selectedIndex]];
+
+    [currentDay addObject:[NSString stringWithFormat:@"%u. Stunde", currentDay.count+1]];
+
+    [self.schultageArray replaceObjectAtIndex:self.selectedIndex withObject:currentDay];
     [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
+
+
+    //[[self.schultageArray objectAtIndex:self.selectedIndex] addObject:[NSString stringWithFormat:@"%u. Stunde", currentDay.count+1]];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagReloadTableView" object:self];
 

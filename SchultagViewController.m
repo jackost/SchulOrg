@@ -80,7 +80,6 @@
     
     NSArray *schultageArray = [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"schultageArray"]];
     self.schultagArray = [[NSMutableArray alloc]initWithArray:[schultageArray objectAtIndex:self.tabBarController.selectedIndex]];
-    NSLog(@"%@", [self.schultagArray description]);
     
     return [self.schultagArray count];
 }
@@ -144,21 +143,32 @@
 }
 
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    NSString *moveSubject = [self.schultagArray objectAtIndex:fromIndexPath.row];
+    [self.schultagArray removeObjectAtIndex:fromIndexPath.row];
+    [self.schultagArray insertObject:moveSubject atIndex:toIndexPath.row];
+    
+    
+    NSMutableArray *schultageArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"schultageArray"]];
+    
+    [schultageArray replaceObjectAtIndex:self.tabBarController.selectedIndex withObject:self.schultagArray];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:schultageArray forKey:@"schultageArray"];
+    
+    
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return self.editing;
 }
-*/
 
 #pragma mark - Table view delegate
 

@@ -47,6 +47,7 @@
     NSDateFormatter *date_formater = [[NSDateFormatter alloc]init];
     [date_formater setDateFormat:@"EEEE, dd.MM.yyyy"];
     self.deadlineField.textLabel.text=[date_formater stringFromDate:self.task.deadline];
+    self.remindField.textLabel.text=[NSString stringWithFormat:@"%@",[date_formater stringFromDate:self.task.notification.fireDate]];
     
 }
 
@@ -56,11 +57,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)taskDataChanged:(id)sender{
-    
-    self.task.done=self.doneSwitch.isOn;
-
-    }
 
 - (IBAction)removeButtonPressed:(id)sender {
 
@@ -80,22 +76,19 @@
 
 - (IBAction)doneSwitchChanged:(id)sender {
     UISwitch *switcher = sender;
+
+    self.task.done=self.doneSwitch.isOn;
+
     if (self.task.notification!=nil) {
-        
     
         if (switcher.isOn==1) {
             
             [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
             
-            NSLog(@"%@", self.task.notification.fireDate);
-
-           /* if ([NSDate date]>=self.task.notification.fireDate) {
-                
+           /* if ([NSDate date]>=self.task.notification.fireDate) {                
                 [UIApplication sharedApplication].applicationIconBadgeNumber--;
                 NSLog(@"badge--");
-            
             } */
-
         }
         
         else {
@@ -104,6 +97,7 @@
         
         }
     }
+    NSLog(@"%@", [[[UIApplication sharedApplication]scheduledLocalNotifications]description]);
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -250,6 +244,7 @@
 - (void)viewDidUnload {
     [self setSubjectField:nil];
     [self setDeadlineField:nil];
+    [self setRemindField:nil];
     [super viewDidUnload];
 }
 @end

@@ -22,9 +22,9 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *subjectField;
 @property (nonatomic, strong) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *deadlineField;
+@property (strong, nonatomic) IBOutlet UITableViewCell *remindField;
 
 -(IBAction)editingDonePressed:(id)sender;
--(IBAction)taskDataChanged:(id)sender;
 -(IBAction)removeButtonPressed:(id)sender;
 - (IBAction)actionButtonPressed:(id)sender;
 - (IBAction)doneSwitchChanged:(id)sender;
