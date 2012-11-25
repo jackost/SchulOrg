@@ -1,23 +1,18 @@
 //
-//  SubjectViewController.m
+//  RoomViewController.m
 //  SchulOrg
 //
-//  Created by Jakob on 27.10.12.
+//  Created by Jakob on 25.11.12.
 //  Copyright (c) 2012 de.Brosu. All rights reserved.
 //
 
-#import "SubjectViewController.h"
-#import "AddTaskViewController.h"
+#import "RoomViewController.h"
 
-@interface SubjectViewController ()
+@interface RoomViewController ()
 
 @end
 
-@implementation SubjectViewController
-
-@synthesize subjects;
-@synthesize AddTaskViewController;
-@synthesize selectedSubject;
+@implementation RoomViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,38 +26,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.subjects =[[NSMutableArray alloc]initWithObjects: @"Deutsch",@"Englisch",@"Mathe",@"Philosophie",@"Physik",@"µC",@"Französisch",@"Informatik",@"Sport",@"Elektrotechnik",@"Gesellschaftslehre",@"BWL",@"Business English", nil];
+
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-     self.subjects = [[NSMutableArray alloc]init];
-    [self.subjects setArray:[defaults objectForKey:@"savedSubjects"]];
-    [self.subjects sortUsingSelector:@selector(compare:)];
+    self.rooms = [[NSMutableArray alloc]init];
+    [self.rooms setArray:[defaults objectForKey:@"savedRooms"]];
+    [self.rooms sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
     
-    selectedSubject=self.AddTaskViewController.selectedSubject;
+    //self.selectedRoom=self.AddTaskViewController.selectedSubject;
     [self.tableView reloadData];
-    
-}
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    [self.tableView reloadData];
-}
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-    
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     if (animated) {
-        NSArray *savedSubjects = [NSArray arrayWithArray:self.subjects];
+        NSArray *savedRooms = [NSArray arrayWithArray:self.rooms];
         NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-        [defaults setObject:savedSubjects forKey:@"savedSubjects"];
+        [defaults setObject:savedRooms forKey:@"savedRooms"];
         
     }
 }
@@ -71,55 +54,56 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [subjects count];
+    // Return the number of rows in the section.
+    return self.rooms.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *UncheckedCellIdentifier = @"UncheckedSubjectCell";
-    static NSString *CheckedCellIdentifier = @"CheckedSubjectCell";
+    static NSString *UncheckedCellIdentifier = @"UncheckedRoomCell";
+    static NSString *CheckedCellIdentifier = @"CheckedRoomCell";
     
-    NSString *CellIdentifier = (indexPath.row==selectedSubject) ? CheckedCellIdentifier : UncheckedCellIdentifier;
-
+    NSString *CellIdentifier = (indexPath.row==self.selectedRoom) ? CheckedCellIdentifier : UncheckedCellIdentifier;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier /*forIndexPath:indexPath*/];
-    cell.textLabel.text = [subjects objectAtIndex:indexPath.row];
+    // Configure the cell...
+    cell.textLabel.text=[self.rooms objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return self.editing;
-}
-
-
+// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.subjects removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source
+        [self.rooms removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return self.editing;
+}
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate
 {
@@ -157,25 +141,11 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
-    self.AddTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
-    self.AddTaskViewController.selectedSubject=indexPath.row;
-    self.AddTaskViewController.subjectDone=YES;
-    [self.AddTaskViewController.tableView reloadData];
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-
-- (IBAction)cancelButtonPressed:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
 
 -(IBAction)addButtonPressed:(id)sender {
-   
-    UIAlertView *addSubjectAlert = [[UIAlertView alloc]initWithTitle:@"Fach hinzufügen"
-                                                             message:@"Name des neuen Fachs"
+    
+    UIAlertView *addSubjectAlert = [[UIAlertView alloc]initWithTitle:@"Raum hinzufügen"
+                                                             message:@"Raum Nummer"
                                                             delegate:self
                                                    cancelButtonTitle:@"Abbrechen"
                                                    otherButtonTitles:@"Ok", nil];
@@ -186,15 +156,25 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex==1) {
-        [self.subjects addObject:[NSString stringWithFormat:@"%@",[alertView textFieldAtIndex:0].text]];
-        [self.subjects sortUsingSelector:@selector(compare:)];
+        [self.rooms addObject:[NSString stringWithFormat:@"%@",[alertView textFieldAtIndex:0].text]];
+        [self.rooms sortUsingSelector:@selector(compare:)];
         [self.tableView reloadData];
     }
     else if (buttonIndex==0){
     }
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
+    //self.AddTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    //self.AddTaskViewController.selectedSubject=indexPath.row;
+    //self.AddTaskViewController.subjectDone=YES;
+    //[self.AddTaskViewController.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
+
+
 @end

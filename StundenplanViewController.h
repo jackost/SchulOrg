@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSMutableArray *freitagArray;
 @property (nonatomic, strong) NSMutableArray *schultageArray;
 
-- (IBAction)buttonPressed:(id)sender;
+- (IBAction)addButtonPressed:(id)sender;
 
 @end

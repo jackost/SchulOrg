@@ -20,11 +20,19 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
         // Custom initialization
         
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:YES];
+    
+
+    
 }
 
 - (void)viewDidLoad
@@ -46,6 +54,8 @@
     self.schultageArray = [[NSMutableArray alloc]initWithObjects:self.montagArray, self.dienstagArray, self.mittwochArray, self.donnerstagArray, self.freitagArray, nil];
     [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
 
+    self.navigationItem.rightBarButtonItem=self.editButtonItem;
+
 	// Do any additional setup after loading the view.
 }
 
@@ -59,11 +69,56 @@
     [super viewDidAppear:YES];
 }
 
-- (IBAction)buttonPressed:(id)sender {
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate
+{
     
-    [[self.schultageArray objectAtIndex:self.selectedIndex ] addObject:@"Fach"];
+    [super setEditing:editing animated:animate];
+    if(editing)
+    {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagEditRow" object:self];
+        
+    }
+    
+    else
+    {
+        self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagStopEditRow" object:self];
+
+        
+    }
+}
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [[self.schultageArray objectAtIndex:self.selectedIndex] removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
+/*- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return self.editing;
+}*/
+
+
+
+
+
+- (IBAction)addButtonPressed:(id)sender {
+    
+    NSMutableArray *currentDay = [[NSMutableArray alloc]initWithArray:[self.schultageArray objectAtIndex:self.selectedIndex]];
+    
+    [[self.schultageArray objectAtIndex:self.selectedIndex ] addObject:[NSString stringWithFormat:@"%u. Stunde", currentDay.count+1]];
     [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
-    
     
     [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagReloadTableView" object:self];
 

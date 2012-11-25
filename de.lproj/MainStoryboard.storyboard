@@ -496,11 +496,11 @@ Jakob Ostrovsky
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="UYi-u3-yCR" detailTextLabel="l1Q-7w-A6z" style="IBUITableViewCellStyleSubtitle" id="bzZ-x2-dNZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="UYi-u3-yCR" detailTextLabel="l1Q-7w-A6z" style="IBUITableViewCellStyleSubtitle" id="bzZ-x2-dNZ">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYi-u3-yCR">
@@ -510,8 +510,8 @@ Jakob Ostrovsky
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1Q-7w-A6z">
-                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1Q-7w-A6z">
+                                            <rect key="frame" x="10" y="24" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -520,6 +520,9 @@ Jakob Ostrovsky
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="pQF-pN-3GT" kind="push" id="5Jo-D9-IjA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -794,11 +797,7 @@ Jakob Ostrovsky
             <objects>
                 <tabBarController definesPresentationContext="YES" id="whx-3l-I4I" customClass="StundenplanViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Stundenplan" id="kcz-ky-zlR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lhl-Vv-E1s">
-                            <connections>
-                                <action selector="buttonPressed:" destination="whx-3l-I4I" id="xPS-Up-5pH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="lhl-Vv-E1s"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="w3n-mQ-JuT">
@@ -1067,7 +1066,7 @@ Jakob Ostrovsky
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="NkC-YF-ybQ" kind="modal" identifier="SubjectSegue" id="n1e-yz-m2H"/>
+                                            <segue destination="MDC-3q-Dev" kind="push" identifier="SubjectSegue" id="BGE-e0-618"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1229,11 +1228,6 @@ Jakob Ostrovsky
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fach" id="6Gd-iD-0Tj">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="po2-SI-Zr2">
-                            <connections>
-                                <action selector="cancelButtonPressed:" destination="MDC-3q-Dev" id="pMp-wH-Cf5"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="KP3-OL-mQc"/>
                     </navigationItem>
                 </tableViewController>
@@ -1393,24 +1387,6 @@ Jakob Ostrovsky
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOv-3d-tPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4111" y="-1423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SiS-Mb-j6O">
-            <objects>
-                <navigationController id="NkC-YF-ybQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ioy-7i-qpU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MDC-3q-Dev" kind="relationship" relationship="rootViewController" id="ogb-AN-5Rg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmI-YD-jY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3076" y="-2082"/>
         </scene>
         <!--Deadline View Controller - Abgabedatum-->
         <scene sceneID="HcZ-o6-Um8">
@@ -1605,11 +1581,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="fxL-kb-7m0" detailTextLabel="sr9-ba-eD1" style="IBUITableViewCellStyleSubtitle" id="wbT-4B-iRa">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="fxL-kb-7m0" detailTextLabel="sr9-ba-eD1" style="IBUITableViewCellStyleSubtitle" id="wbT-4B-iRa">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fxL-kb-7m0">
@@ -1619,8 +1595,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sr9-ba-eD1">
-                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sr9-ba-eD1">
+                                            <rect key="frame" x="10" y="24" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1629,6 +1605,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="pQF-pN-3GT" kind="push" id="d71-Kh-dsG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1653,11 +1632,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Jja-Yt-dMO" detailTextLabel="KpK-AF-1dM" style="IBUITableViewCellStyleSubtitle" id="kFF-PO-vwv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Jja-Yt-dMO" detailTextLabel="KpK-AF-1dM" style="IBUITableViewCellStyleSubtitle" id="kFF-PO-vwv">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jja-Yt-dMO">
@@ -1667,8 +1646,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KpK-AF-1dM">
-                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KpK-AF-1dM">
+                                            <rect key="frame" x="10" y="24" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1677,6 +1656,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="pQF-pN-3GT" kind="push" id="FTU-XF-u5D"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1701,11 +1683,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="bMV-Er-FXH" detailTextLabel="4a0-ic-YAX" style="IBUITableViewCellStyleSubtitle" id="6gd-TI-uKo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="bMV-Er-FXH" detailTextLabel="4a0-ic-YAX" style="IBUITableViewCellStyleSubtitle" id="6gd-TI-uKo">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bMV-Er-FXH">
@@ -1715,8 +1697,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4a0-ic-YAX">
-                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4a0-ic-YAX">
+                                            <rect key="frame" x="10" y="24" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1725,6 +1707,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="pQF-pN-3GT" kind="push" id="wq2-tZ-5rk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1749,11 +1734,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Esf-p2-PcE" detailTextLabel="gow-FB-jKz" style="IBUITableViewCellStyleSubtitle" id="VPJ-Gm-vAq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubjectCell" textLabel="Esf-p2-PcE" detailTextLabel="gow-FB-jKz" style="IBUITableViewCellStyleSubtitle" id="VPJ-Gm-vAq">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Esf-p2-PcE">
@@ -1763,8 +1748,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lehrer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gow-FB-jKz">
-                                            <rect key="frame" x="10" y="24" width="41" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gow-FB-jKz">
+                                            <rect key="frame" x="10" y="24" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1773,6 +1758,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="pQF-pN-3GT" kind="push" id="7DU-bB-MGd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1788,141 +1776,204 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-3940" y="1736"/>
         </scene>
+        <!--Table View Controller - Stunde ändern-->
+        <scene sceneID="vbM-t9-HRZ">
+            <objects>
+                <tableViewController id="pQF-pN-3GT" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SdV-9g-A84">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="WtM-xa-uGo">
+                                <cells/>
+                            </tableViewSection>
+                            <tableViewSection id="KEo-ka-0w5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wqp-Gk-FlY" style="IBUITableViewCellStyleDefault" id="yE4-FB-Ok1">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wqp-Gk-FlY">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="juJ-Xd-U2J" kind="push" id="VsM-oF-GGL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Pjw-jr-eok">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="27F-EU-3Iz" style="IBUITableViewCellStyleDefault" id="bBu-MW-eqi">
+                                        <rect key="frame" x="0.0" y="96" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27F-EU-3Iz">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="jL8-NA-e7U" kind="push" id="f3k-fs-xku"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="pQF-pN-3GT" id="eCw-rE-ZRI"/>
+                            <outlet property="delegate" destination="pQF-pN-3GT" id="zaP-uW-pZa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stunde ändern" id="gwz-v1-v4E"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lbr-bf-eXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3558" y="2483"/>
+        </scene>
+        <!--Subject View Controller - Fach ändern-->
+        <scene sceneID="0If-OL-paR">
+            <objects>
+                <tableViewController id="juJ-Xd-U2J" customClass="SubjectViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bE8-6B-0WW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UncheckedSubjectCell" editingAccessoryType="disclosureIndicator" textLabel="vVb-HG-v7C" rowHeight="45" style="IBUITableViewCellStyleDefault" id="aaa-md-scE">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vVb-HG-v7C">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckedSubjectCell" editingAccessoryType="disclosureIndicator" textLabel="aIw-KC-P1K" rowHeight="45" style="IBUITableViewCellStyleDefault" id="fX0-hO-6ye">
+                                <rect key="frame" x="0.0" y="92" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="0.0" width="280" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Gewähltes Fach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aIw-KC-P1K">
+                                            <rect key="frame" x="10" y="0.0" width="260" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="juJ-Xd-U2J" id="Wh2-7g-szH"/>
+                            <outlet property="delegate" destination="juJ-Xd-U2J" id="xwW-KM-Nez"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fach ändern" id="cVd-Cx-E2B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="pDV-UH-dzV"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HO3-zu-5iU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3016" y="2233"/>
+        </scene>
+        <!--Room View Controller - Raum ändern-->
+        <scene sceneID="BhY-Yf-g9s">
+            <objects>
+                <tableViewController id="jL8-NA-e7U" customClass="RoomViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Sby-xR-Y8P">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UncheckedRoomCell" editingAccessoryType="disclosureIndicator" textLabel="Ghd-j6-srb" rowHeight="45" style="IBUITableViewCellStyleDefault" id="OHq-hf-HUv">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ghd-j6-srb">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckedRoomCell" editingAccessoryType="disclosureIndicator" textLabel="XCB-6n-30L" rowHeight="45" style="IBUITableViewCellStyleDefault" id="p0j-7N-Usk">
+                                <rect key="frame" x="0.0" y="92" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="0.0" width="280" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Gewählter Raum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XCB-6n-30L">
+                                            <rect key="frame" x="10" y="0.0" width="260" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="jL8-NA-e7U" id="yRv-GF-f67"/>
+                            <outlet property="delegate" destination="jL8-NA-e7U" id="1cf-t4-gwY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Raum ändern" id="0lF-Qr-CKt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="paz-hT-hEg"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foI-hw-L9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3016" y="2807"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="AddEventViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEventViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="AddNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="action" name="editNameDone:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="remindStepperChanged:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="remindLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="remindStepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="DeadlineViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="deadlinePickerChanged:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="nextWeekButton:"/>
-                <relationship kind="outlet" name="deadlineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deadlinePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="DeveloperViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeveloperViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="badgeCountPressed:"/>
-                <relationship kind="action" name="resetBadgeButtonPressed:"/>
-                <relationship kind="outlet" name="badgeCountLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditNoteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionButtonPressed:"/>
-                <relationship kind="action" name="editingDone:"/>
-                <relationship kind="action" name="removeButtonPressed:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditTaskViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionButtonPressed:"/>
-                <relationship kind="action" name="doneSwitchChanged:"/>
-                <relationship kind="action" name="editingDonePressed:"/>
-                <relationship kind="action" name="removeButtonPressed:"/>
-                <relationship kind="action" name="taskDataChanged:"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="deadlineField" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="doneSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="subjectField" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="HausaufgabenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HausaufgabenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="HomescreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomescreenViewController.h"/>
-        </class>
-        <class className="InfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="feedbackButtonPressed:"/>
-                <relationship kind="action" name="helpButtonPressed:"/>
-                <relationship kind="action" name="homepageButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="NotizenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotizenViewController.h"/>
-        </class>
-        <class className="SchulkalenderViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchulkalenderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addEventButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="SchultagViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchultagViewController.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetButtonPressed:"/>
-                <relationship kind="action" name="stundenplanGruppenStepperChanged:"/>
-                <relationship kind="outlet" name="stundenplanGruppenLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StundenplanViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StundenplanViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonPressed:"/>
-            </relationships>
-        </class>
-        <class className="SubjectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonPressed:"/>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="7DU-bB-MGd"/>
         <segue reference="Ebr-Je-ODj"/>
     </inferredMetricsTieBreakers>
 </document>

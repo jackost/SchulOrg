@@ -15,6 +15,7 @@
 		360EA224161F52C40005788D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 360EA223161F52C40005788D /* AppDelegate.m */; };
 		360EA22D161F52C40005788D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360EA22B161F52C40005788D /* MainStoryboard.storyboard */; };
 		361A05B4163C463C00A3A0F9 /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361A05B3163C463C00A3A0F9 /* SubjectViewController.m */; };
+		361F6C1816623C5D00F9756C /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361F6C1716623C5D00F9756C /* RoomViewController.m */; };
 		36261E0D1620484C00CAC0FB /* HomescreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36261E0C1620484C00CAC0FB /* HomescreenViewController.m */; };
 		362C1509165D6FCD005587F9 /* DeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362C1508165D6FCD005587F9 /* DeveloperViewController.m */; };
 		362C8FEE1637FB860029C0AC /* JOTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 362C8FED1637FB860029C0AC /* JOTask.m */; };
@@ -60,6 +61,8 @@
 		360EA223161F52C40005788D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		361A05B2163C463C00A3A0F9 /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		361A05B3163C463C00A3A0F9 /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
+		361F6C1616623C5D00F9756C /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		361F6C1716623C5D00F9756C /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
 		36261E0B1620484C00CAC0FB /* HomescreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomescreenViewController.h; sourceTree = SOURCE_ROOT; };
 		36261E0C1620484C00CAC0FB /* HomescreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomescreenViewController.m; sourceTree = SOURCE_ROOT; };
 		362C1507165D6FCD005587F9 /* DeveloperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeveloperViewController.h; path = ../DeveloperViewController.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				36A3825A1660414A0077CD5C /* SchultagViewController.m */,
 				36A3825C166041E50077CD5C /* JOSubject.h */,
 				36A3825D166041E50077CD5C /* JOSubject.m */,
+				361F6C1616623C5D00F9756C /* RoomViewController.h */,
+				361F6C1716623C5D00F9756C /* RoomViewController.m */,
 			);
 			name = Stundenplan;
 			path = ..;
@@ -397,6 +402,7 @@
 				36A38258166041160077CD5C /* StundenplanViewController.m in Sources */,
 				36A3825B1660414A0077CD5C /* SchultagViewController.m in Sources */,
 				36A3825E166041E50077CD5C /* JOSubject.m in Sources */,
+				361F6C1816623C5D00F9756C /* RoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,5 +17,11 @@
 @property (nonatomic, strong) NSString *titel;
 
 -(void)reloadTableView;
+-(void)editRow;
+-(void)stopEditRow;
+
+
+
+
 
 @end

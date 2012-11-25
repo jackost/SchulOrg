@@ -78,8 +78,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"SubjectSegue"]) {
-        UINavigationController *SNavcon = segue.destinationViewController;
-        SubjectViewController *SViewController = [SNavcon.viewControllers objectAtIndex:0];
+        SubjectViewController *SViewController = segue.destinationViewController;
         SViewController.AddTaskViewController=self;
     }
     else if ([segue.identifier isEqualToString:@"DeadlineSegue"]) {
