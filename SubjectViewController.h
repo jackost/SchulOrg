@@ -10,11 +10,14 @@
 
 @class AddTaskViewController;
 @class JOTask;
+@class LessonViewController;
 
 @interface SubjectViewController : UITableViewController <UIAlertViewDelegate>
 
+
 @property (strong, nonatomic) NSMutableArray *subjects;
-@property (nonatomic, strong) AddTaskViewController *AddTaskViewController;
+@property (strong, nonatomic) LessonViewController *lessonViewController;
+@property (nonatomic, strong) AddTaskViewController *addTaskViewController;
 @property (nonatomic, assign) int selectedSubject;
 
 @property (nonatomic, strong) JOTask *task;

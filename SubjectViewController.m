@@ -8,6 +8,7 @@
 
 #import "SubjectViewController.h"
 #import "AddTaskViewController.h"
+#import "LessonViewController.h"
 
 @interface SubjectViewController ()
 
@@ -16,7 +17,6 @@
 @implementation SubjectViewController
 
 @synthesize subjects;
-@synthesize AddTaskViewController;
 @synthesize selectedSubject;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,7 +38,12 @@
     [self.subjects sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
     
-    selectedSubject=self.AddTaskViewController.selectedSubject;
+    if (self.addTaskViewController.isViewLoaded) {
+        selectedSubject=self.addTaskViewController.selectedSubject;
+    }
+    else if (self.lessonViewController.isViewLoaded){
+        selectedSubject=self.lessonViewController.selectedSubject;
+    }
     [self.tableView reloadData];
     
 }
@@ -159,13 +164,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
-    self.AddTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
-    self.AddTaskViewController.selectedSubject=indexPath.row;
-    self.AddTaskViewController.subjectDone=YES;
-    [self.AddTaskViewController.tableView reloadData];
-    [self.navigationController popViewControllerAnimated:YES];
+    self.addTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
+    self.addTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    self.addTaskViewController.selectedSubject=indexPath.row;
+    self.addTaskViewController.subjectDone=YES;
     
+    self.lessonViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
+    self.lessonViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    self.lessonViewController.selectedSubject=indexPath.row;
+    self.lessonViewController.subjectDone=YES;
+    
+    [self.lessonViewController.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

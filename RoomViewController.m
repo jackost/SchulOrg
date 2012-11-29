@@ -7,6 +7,7 @@
 //
 
 #import "RoomViewController.h"
+#import "LessonViewController.h"
 
 @interface RoomViewController ()
 
@@ -33,7 +34,7 @@
     [self.rooms sortUsingSelector:@selector(compare:)];
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
     
-    //self.selectedRoom=self.AddTaskViewController.selectedSubject;
+    self.selectedRoom=self.lessonViewController.selectedRoom;
     [self.tableView reloadData];
 
 
@@ -61,13 +62,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return self.rooms.count;
 }
 
@@ -86,22 +85,20 @@
 }
 
 
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+
         [self.rooms removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return self.editing;
 }
 
@@ -123,21 +120,6 @@
 }
 
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -167,11 +149,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //self.AddTaskViewController.subjectField.textLabel.text=[subjects objectAtIndex:indexPath.row];
-    //self.AddTaskViewController.subjectField.textLabel.font = [UIFont boldSystemFontOfSize:18];
-    //self.AddTaskViewController.selectedSubject=indexPath.row;
-    //self.AddTaskViewController.subjectDone=YES;
-    //[self.AddTaskViewController.tableView reloadData];
+    self.lessonViewController.roomField.textLabel.text=[self.rooms objectAtIndex:indexPath.row];
+    self.lessonViewController.roomField.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    self.lessonViewController.selectedRoom=indexPath.row;
+    self.lessonViewController.subjectDone=YES;
+    [self.lessonViewController.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
     
 }

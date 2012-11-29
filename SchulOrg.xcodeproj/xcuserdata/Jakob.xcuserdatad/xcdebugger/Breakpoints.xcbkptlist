@@ -7,25 +7,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "EditTaskViewController.m"
-         timestampString = "375551800.184176"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "157"
-         endingLineNumber = "157"
-         landmarkName = "-actionSheet:clickedButtonAtIndex:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "StundenplanViewController.m"
-         timestampString = "375574430.748205"
+         timestampString = "375629370.956545"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
          landmarkName = "-addButtonPressed:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -83,7 +83,7 @@
 
 - (IBAction)actionButtonPressed:(id)sender {
     
-    UIActionSheet *actionActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Drucken", nil];
+    UIActionSheet *actionActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Nachricht", nil];
     [actionActionSheet setTag:0];
     
     [actionActionSheet showFromToolbar:self.navigationController.toolbar];
@@ -123,28 +123,23 @@
         
         else if (buttonIndex==1)
         {
-            UIPrintInteractionController *printController = [UIPrintInteractionController sharedPrintController];
-            
-            if(printController) {
+            if ([MFMessageComposeViewController canSendText]) {
+                MFMessageComposeViewController *messager =[[MFMessageComposeViewController alloc]init];
+                messager.messageComposeDelegate=self;
+                [messager setBody:[NSString stringWithFormat:@"%@: \n%@",self.nameField.text,self.contentField.text]];
+                [self presentModalViewController:messager animated:YES];
                 
-                printController.delegate = self;
-                
-                UIPrintInfo *printInfo = [UIPrintInfo printInfo];
-                printInfo.outputType = UIPrintInfoOutputGrayscale;
-                printInfo.jobName = [NSString stringWithFormat:@"Notiz"];
-                printInfo.duplex = UIPrintInfoDuplexNone;
-                printController.printInfo = printInfo;
-                printController.showsPageRange = NO;
-                printController.printingItem = [NSString stringWithFormat:@"%@\n\n%@",self.nameField.text, self.contentField.text];
-                
-                void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
-                    if (!completed && error) {
-                        NSLog(@"FAILED! due to error in domain %@ with error code %u", error.domain, error.code);
-                    }
-                };
-                
-                [printController presentAnimated:YES completionHandler:completionHandler];
             }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                                message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles: nil];
+                [alert show];
+            }
+
         }
     }
 
@@ -180,6 +175,27 @@
             break;
     }
     // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    
+    switch (result) {
+        case MessageComposeResultCancelled:
+            NSLog(@"Message cancelled: you cancelled the operation and no message was queued.");
+            break;
+        case MessageComposeResultSent:
+            NSLog(@"Message send: the  message is queued in the outbox. It is ready to send.");
+            break;
+        case MessageComposeResultFailed:
+            NSLog(@"Message failed: the  message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Message not sent.");
+            break;
+    }
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 

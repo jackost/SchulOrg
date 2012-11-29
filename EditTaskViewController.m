@@ -67,7 +67,7 @@
 
 - (IBAction)actionButtonPressed:(id)sender {
     
-    UIActionSheet *removeActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Drucken", nil];
+    UIActionSheet *removeActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"E-Mail", @"Nachricht", nil];
     [removeActionSheet setTag:0];
     
     [removeActionSheet showFromToolbar:self.navigationController.toolbar];
@@ -85,10 +85,13 @@
             
             [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
             
-           /* if ([NSDate date]>=self.task.notification.fireDate) {                
-                [UIApplication sharedApplication].applicationIconBadgeNumber--;
+            /*if ([NSDate date]>=self.task.notification.fireDate) {
+                [UIApplication sharedApplication].applicationIconBadgeNumber=0;
                 NSLog(@"badge--");
             } */
+        
+            [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+            NSLog(@"badge--");
         }
         
         else {
@@ -108,12 +111,8 @@
         {
             if (self.task.notification) {
                 [[UIApplication sharedApplication]cancelLocalNotification:self.task.notification];
-                
-                /* if (([NSDate date]>=self.task.notification.fireDate) & (self.task.done==NO) )
-                {
-                    [UIApplication sharedApplication].applicationIconBadgeNumber--;
-                } */
-
+                [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+                NSLog(@"badge--");
             }
             [self.HausaufgabenViewController.tasks removeObjectAtIndex:self.HausaufgabenViewController.tableView.indexPathForSelectedRow.row];
 
@@ -131,7 +130,7 @@
                 MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
                 mailer.mailComposeDelegate = self;
                 [mailer setSubject:[NSString stringWithFormat:@"%@ Hausaufgabe",subjectField.textLabel.text]];
-                NSString *emailBody = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text, self.deadlineField.textLabel.text, self.contentField.text];
+                NSString *emailBody = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n\n%@",self.subjectField.textLabel.text, self.deadlineField.textLabel.text, self.contentField.text];
                 [mailer setMessageBody:emailBody isHTML:NO];
                 // UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
                 // NSData *imageData = UIImagePNGRepresentation(myImage);
@@ -152,27 +151,22 @@
     
         else if (buttonIndex==1)
         {
-            UIPrintInteractionController *printController = [UIPrintInteractionController sharedPrintController];
-        
-            if(printController) {
-            
-                printController.delegate = self;
-            
-                UIPrintInfo *printInfo = [UIPrintInfo printInfo];
-                printInfo.outputType = UIPrintInfoOutputGeneral;
-                printInfo.jobName = [NSString stringWithFormat:@"%@ Hausaufgabe", self.subjectField.textLabel.text];
-                printInfo.duplex = UIPrintInfoDuplexLongEdge;
-                printController.printInfo = printInfo;
-                printController.showsPageRange = NO;
-                printController.printingItem = [NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@.",self.subjectField.textLabel.text,self.deadlineField.textLabel.text,self.contentField.text];
-            
-                void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
-                    if (!completed && error) {
-                        NSLog(@"FAILED! due to error in domain %@ with error code %u", error.domain, error.code);
-                    }
-                };
-            
-                [printController presentAnimated:YES completionHandler:completionHandler];
+
+            if ([MFMessageComposeViewController canSendText]) {
+                MFMessageComposeViewController *messager =[[MFMessageComposeViewController alloc]init];
+                messager.messageComposeDelegate=self;
+                [messager setBody:[NSString stringWithFormat:@"%@ Hausaufgabe für %@: \n%@",self.subjectField.textLabel.text, self.deadlineField.textLabel.text, self.contentField.text]];
+                [self presentModalViewController:messager animated:YES];
+
+            }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                            message:@"Ihr Gerät unterstützt diese Funktion leider nicht."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles: nil];
+                [alert show];
             }
         }
     }
@@ -203,6 +197,25 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    
+    switch (result) {
+        case MessageComposeResultCancelled:
+            NSLog(@"Message cancelled: you cancelled the operation and no message was queued.");
+            break;
+        case MessageComposeResultSent:
+            NSLog(@"Message send: the  message is queued in the outbox. It is ready to send.");
+            break;
+        case MessageComposeResultFailed:
+            NSLog(@"Message failed: the  message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Message not sent.");
+            break;
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 -(void)textViewDidBeginEditing:(UITextView *)textView {
     

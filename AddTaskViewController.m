@@ -23,7 +23,6 @@
 @synthesize contentField;
 @synthesize subjectField;
 @synthesize deadlineField;
-@synthesize selectedSubject;
 @synthesize deadlineDate;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    selectedSubject=1337;
+    self.selectedSubject=1337;
     deadlineDate=[NSDate date];
 }
 
@@ -107,7 +106,7 @@
     }
     
     else{
-        NSLog(@"Notification = nil");
+        NSLog(@"Notification == nil");
     }
     [self dismissModalViewControllerAnimated:YES];
     

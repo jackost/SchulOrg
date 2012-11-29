@@ -8,7 +8,7 @@
 
 #import "StundenplanViewController.h"
 #import "SchultagViewController.h"
-#import "JOSubject.h"
+#import "JOLesson.h"
 
 @interface StundenplanViewController ()
 
@@ -31,8 +31,6 @@
     
     [super viewWillAppear:YES];
     
-
-    
 }
 
 - (void)viewDidLoad
@@ -40,7 +38,7 @@
     [super viewDidLoad];
     
 
-    //JOSubject *englisch = [[JOSubject alloc]initWithSubject:@"Englisch" AndTeacher:@"Fr. Peschel"];
+    //JOLesson *englisch = [[JOLesson alloc]initWithSubject:@"Englisch" AndTeacher:@"Fr. Peschel"];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -85,7 +83,6 @@
         self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         [[NSNotificationCenter defaultCenter]postNotificationName:@"schultagStopEditRow" object:self];
 
-        
     }
 }
 
@@ -103,15 +100,6 @@
     }
 }
 
-/*- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return self.editing;
-}*/
-
-
-
-
 
 - (IBAction)addButtonPressed:(id)sender {
     
@@ -125,7 +113,6 @@
 
     [self.schultageArray replaceObjectAtIndex:self.selectedIndex withObject:currentDay];
     [[NSUserDefaults standardUserDefaults]setObject:self.schultageArray forKey:@"schultageArray"];
-
 
     //[[self.schultageArray objectAtIndex:self.selectedIndex] addObject:[NSString stringWithFormat:@"%u. Stunde", currentDay.count+1]];
     

@@ -8,7 +8,8 @@
 
 #import "SchultagViewController.h"
 #import "StundenplanViewController.h"
-#import "JOSubject.h"
+#include "LessonViewController.h"
+#import "JOLesson.h"
 
 @interface SchultagViewController ()
 
@@ -30,6 +31,8 @@
 {
     [super viewDidLoad];
     
+    [self.tableView setAllowsSelection:NO];
+    [self.tableView setAllowsSelectionDuringEditing:YES];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadTableView) name:@"schultagReloadTableView" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(editRow) name:@"schultagEditRow" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(stopEditRow) name:@"schultagStopEditRow" object:nil];
@@ -86,10 +89,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SubjectCell";
+    static NSString *CellIdentifier = @"LessonCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier /*forIndexPath:indexPath*/];
     
     // Configure the cell...
+    
+    //JOLesson *lesson = [self.schultagArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text=[self.schultagArray objectAtIndex:indexPath.row];
     
@@ -143,13 +148,24 @@
 }
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"LessonSegue"]) {
+        UINavigationController *LNavcon = segue.destinationViewController;
+        LessonViewController *LViewController = [LNavcon.viewControllers objectAtIndex:0];
+        LViewController.schultagViewController=self;
+        LViewController.lesson = [self.schultagArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        
+    }
+}
+
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    NSString *moveSubject = [self.schultagArray objectAtIndex:fromIndexPath.row];
+    NSString *moveLesson = [self.schultagArray objectAtIndex:fromIndexPath.row];
     [self.schultagArray removeObjectAtIndex:fromIndexPath.row];
-    [self.schultagArray insertObject:moveSubject atIndex:toIndexPath.row];
+    [self.schultagArray insertObject:moveLesson atIndex:toIndexPath.row];
     
     
     NSMutableArray *schultageArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"schultageArray"]];
@@ -162,11 +178,8 @@
 }
 
 
-
-// Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the item to be re-orderable.
     return self.editing;
 }
 
@@ -174,6 +187,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSLog(@"Selected-Row: %i", self.tableView.indexPathForSelectedRow.row);
+
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

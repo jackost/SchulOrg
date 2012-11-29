@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class LessonViewController;
+
 @interface RoomViewController : UITableViewController
 
+@property(nonatomic, strong) LessonViewController *lessonViewController;
 @property (nonatomic, strong) NSMutableArray *rooms;
 @property (nonatomic, assign) int selectedRoom;
 

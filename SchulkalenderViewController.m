@@ -116,7 +116,7 @@
      */
 }
 
-- (IBAction)addEventButtonPressed:(id)sender {
+/*- (IBAction)addEventButtonPressed:(id)sender {
     EKEventStore *eventDB = [[EKEventStore alloc] init];
     
     EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
@@ -141,7 +141,7 @@
                               otherButtonTitles:nil];
 		[alert show];
 
-}
+}*/
 
     
 

@@ -12,6 +12,6 @@
 
 @interface SchulkalenderViewController : UITableViewController
 
-- (IBAction)addEventButtonPressed:(id)sender;
+//- (IBAction)addEventButtonPressed:(id)sender;
 
 @end

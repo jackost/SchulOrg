@@ -12,7 +12,7 @@
 @class NotizenViewController;
 @class JONote;
 
-@interface EditNoteViewController : UITableViewController <UITextViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIPrintInteractionControllerDelegate>
+@interface EditNoteViewController : UITableViewController <UITextViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIPrintInteractionControllerDelegate, MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong) JONote *note;
 
 @property (nonatomic, strong)NotizenViewController *NotizenViewController;
